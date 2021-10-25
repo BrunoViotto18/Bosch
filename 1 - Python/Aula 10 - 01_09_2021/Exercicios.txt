@@ -1,0 +1,120 @@
+'''import math
+
+def areaCirculo(raio):
+  area = math.pi * raio ** 2
+  return area
+
+r = float(input('Digite o raio do círculo: '))
+
+print(f'Área do círculo: {round(areaCirculo(r), 2)}')'''
+
+'''def Bio(DNA):
+  DNA = DNA.upper()
+  RNA = ''
+  valido = True
+  for c in DNA:
+    if c == 'G':
+      RNA += 'C'
+    elif c == 'C':
+      RNA += 'G'
+    elif c == 'T':
+      RNA += 'A'
+    elif c == 'A':
+      RNA += 'U'
+    else:
+      valido = False
+  if valido:
+    return RNA
+  else:
+    return 'Cadeia de DNA inválida!'
+
+dna = input('Digite uma cadeia de DNA: ')
+print(f"""
+DNA: {dna.upper()}
+RNA: {Bio(dna)}""")'''
+
+'''import math
+
+def bhaskara(a, b, c):
+  if a == 0:
+    a = 1
+  delta = math.sqrt(b ** 2 - 4 * a * c)
+  x1 = (-b + delta) / (2 * a)
+  x2 = (-b - delta) / (2 * a)
+  x = [x1, x2]
+  return x
+
+a = float(input('Digite o valor A: '))
+b = float(input('Digite o valor B: '))
+c = float(input('Digite o valor C: '))
+x = bhaskara(a, b, c)
+
+print(f"""
+A Função de Segundo Grau: {a}X² + {b}X + {c} tem como raízes:
+
+X' = {round(x[0], 2)}
+X" = {round(x[1], 2)}""")'''
+
+'''def anagrama(n1, n2):
+  string = 'abcdefghijklmnopqrstuvwxyz'
+  x = True
+  for c in string:
+    if n1.count(c) != n2.count(c):
+      x = False
+      break
+  return x
+
+
+n1 = input('Digite algo: ')
+n2 = input('Digite algo novamente: ')
+
+print(anagrama(n1, n2))'''
+
+'''def ipValido(ip):
+  ip = ip.split('.')
+  print(ip)
+  x = True
+  if len(ip) == 4:
+    for num in ip:
+      if int(num) < 0 or int(num) > 255:
+        x = False
+  else:
+    x = False
+  return x'''
+
+'''def separa(x, split):
+  tupla = []
+  lista = []
+  for c in x:
+    tupla.append(c)
+  for c in range(x.count(split)+1):
+    d = ''
+    if c == x.count(split):
+      for i in tupla[:]:
+        d += i
+      lista.append(d)
+    else:
+      p = tupla.index(split)
+      for c in tupla[:p]:
+        d += c
+      lista.append(d)
+      del tupla[:p+1]
+  return lista
+
+
+def ipValido(ip):
+  if len(ip) != 4:
+    return False
+  for c in ip:
+    if c.isdigit() == True:
+      x = int(c)
+      if x < 0 or x > 255:
+        return False
+    else:
+      return False
+  return True
+
+
+ip = input('Digite um endereço IP: ')
+ip = separa(ip, '.')
+print(ipValido(ip))'''

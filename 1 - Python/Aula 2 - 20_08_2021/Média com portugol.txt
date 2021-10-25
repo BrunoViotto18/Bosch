@@ -1,0 +1,17 @@
+Algoritmo Média
+
+Início
+	Var
+		real: N1, N2, Média;
+
+	Leia N1, N2;
+	Média = (N1 + N2) / 2;
+
+	Se Média >= 7
+		Então
+			Escreva "Aprovado";
+		Senão
+			Escreva "Reprovado";
+	Fim_se;
+
+Fim.

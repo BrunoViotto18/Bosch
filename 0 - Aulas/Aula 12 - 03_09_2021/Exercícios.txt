@@ -1,0 +1,121 @@
+'''
+arquivo = open('arquivo', '#')
+
+# Read
+
+r = somente para leitura
+r+ = leitura e escrita
+
+# Write
+
+w = somente para escrita
+w+ = leitura e escrita
+
+# Append
+
+a = somente para escrita
+a+ = leitura e escrita
+
+arquivo.read()       - Lê o arquivo
+arquivo.close()      - Fecha o arquivo
+arquivo.write('TXT') - Escreve no arquivo
+'''
+
+'''try:  
+  arquivo = open('algo.txt', 'w+')
+  arquivo.write('Bruh')
+  arquivo.write('Bruhhno')
+except Exception:
+  print('ERRO!')
+finally:
+  arquivo.close()
+
+try:
+  arquivo = open('algo.txt', 'a+')
+  arquivo.write('\nWtf')
+  arquivo.seek(0)
+  print(arquivo.read())
+except Exception:
+  print('ERRO!')
+finally:
+  arquivo.close()
+
+try:
+  arquivo = open('algo.txt', 'r+')
+  print(arquivo.read())
+except Exception:
+  print('ERRO!')
+finally:
+  arquivo.close()'''
+
+'''try:
+  arq = open('algo.txt', 'a+')
+  arq.seek(0)
+  if 'Banana\n' in arq.readlines():
+    arq.seek(0)
+    i = int(arq.readlines().index('Banana\n'))
+    print(i+1)
+    arq.seek(0)
+    print(arq.readlines()[i])
+  else:
+    print(False)
+except Exception:
+  print('ERRO!')
+finally:
+  arq.close()'''
+
+'''try:
+  arq = open('IPs.txt', 'a+')  
+  while True:
+    ip = input('Digite um endereço IP: ')
+    arq.write(f'{ip}\n')
+    while True:
+      con = input('Deseja continuar? [S/N] ').upper()[0]
+      if con in 'SN':
+        break
+    if con == 'N':
+      break
+except Exception:
+  print('ERRO!')
+finally:
+  arq.close()'''
+
+def ipValido(ip):
+  ip = ip.split('.')
+  if len(ip) != 4:
+    return False
+  for c in ip:
+    if c.isdigit() == True:
+      x = int(c)
+      if x < 0 or x > 255:
+        return False
+    else:
+      return False
+  return True
+
+def write(arquivo, txt, linha):
+  arquivo.seek(0)
+  archive = arquivo.readlines()
+  if linha == -1:
+    linha = len(archive)
+  archive.insert(linha-1, txt+'\n')
+  arquivo.seek(0)
+  for c in archive:
+    arquivo.write(c)
+
+try:
+  arq = open('IPs.txt', 'r')
+  IP = open('IPsValidos.txt', 'r+')
+  for ip in arq.readlines():
+    ip = ip.replace('\n', '')
+    if ipValido(ip) == True:
+      write(IP, ip, 3)
+    else:
+      IP.seek(0)
+      i = IP.readlines().index('Inválidos:\n')+1
+      write(IP, ip, i+2)
+except Exception:
+  print('Erro!')
+finally:
+  arq.close()
+  IP.close()

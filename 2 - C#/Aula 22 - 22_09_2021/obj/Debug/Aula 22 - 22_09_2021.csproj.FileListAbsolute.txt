@@ -1,0 +1,7 @@
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\2 - C#\Aula 22 - 22_09_2021\bin\Debug\Aula 22 - 22_09_2021.exe.config
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\2 - C#\Aula 22 - 22_09_2021\bin\Debug\Aula 22 - 22_09_2021.exe
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\2 - C#\Aula 22 - 22_09_2021\bin\Debug\Aula 22 - 22_09_2021.pdb
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\2 - C#\Aula 22 - 22_09_2021\obj\Debug\Aula 22 - 22_09_2021.csproj.AssemblyReference.cache
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\2 - C#\Aula 22 - 22_09_2021\obj\Debug\Aula 22 - 22_09_2021.csproj.CoreCompileInputs.cache
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\2 - C#\Aula 22 - 22_09_2021\obj\Debug\Aula 22 - 22_09_2021.exe
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\2 - C#\Aula 22 - 22_09_2021\obj\Debug\Aula 22 - 22_09_2021.pdb

@@ -1,0 +1,14 @@
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\PROVA BOSCH\EX001\bin\Debug\EX001.exe.config
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\PROVA BOSCH\EX001\bin\Debug\EX001.exe
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\PROVA BOSCH\EX001\bin\Debug\EX001.pdb
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\PROVA BOSCH\EX001\obj\Debug\EX001.csproj.AssemblyReference.cache
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\PROVA BOSCH\EX001\obj\Debug\EX001.csproj.CoreCompileInputs.cache
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\PROVA BOSCH\EX001\obj\Debug\EX001.exe
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\PROVA BOSCH\EX001\obj\Debug\EX001.pdb
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\2 - C#\Aula 33 - 08_10_2021 - PROVA BOSCH\EX001\bin\Debug\EX001.exe.config
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\2 - C#\Aula 33 - 08_10_2021 - PROVA BOSCH\EX001\bin\Debug\EX001.exe
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\2 - C#\Aula 33 - 08_10_2021 - PROVA BOSCH\EX001\bin\Debug\EX001.pdb
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\2 - C#\Aula 33 - 08_10_2021 - PROVA BOSCH\EX001\obj\Debug\EX001.csproj.AssemblyReference.cache
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\2 - C#\Aula 33 - 08_10_2021 - PROVA BOSCH\EX001\obj\Debug\EX001.csproj.CoreCompileInputs.cache
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\2 - C#\Aula 33 - 08_10_2021 - PROVA BOSCH\EX001\obj\Debug\EX001.exe
+S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\2 - C#\Aula 33 - 08_10_2021 - PROVA BOSCH\EX001\obj\Debug\EX001.pdb

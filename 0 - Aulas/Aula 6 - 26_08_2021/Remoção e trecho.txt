@@ -1,0 +1,19 @@
+lista = [2, 6, 4, 7, 52, 41, 12, 36, 9, 3]
+
+print(lista)
+r = int(input('Remova um elemento:'))
+lista.pop(r - 1)
+print(lista)
+r = int(input('Remova outro elemento:'))
+lista.pop(r - 1)
+print(lista)
+
+x = int(input('A partir da posição: ')) - 1
+y = int(input('Até a posição: '))
+
+if x <= y:
+    z = 1
+else:
+    z = -1
+
+print(lista[x:y:z])

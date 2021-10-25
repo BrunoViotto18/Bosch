@@ -1,0 +1,6 @@
+C:\Users\disrct\Desktop\Prova4\obj\Debug\Prova4.csproj.CoreCompileInputs.cache
+C:\Users\disrct\Desktop\Prova4\bin\Debug\Prova4.exe.config
+C:\Users\disrct\Desktop\Prova4\bin\Debug\Prova4.exe
+C:\Users\disrct\Desktop\Prova4\bin\Debug\Prova4.pdb
+C:\Users\disrct\Desktop\Prova4\obj\Debug\Prova4.exe
+C:\Users\disrct\Desktop\Prova4\obj\Debug\Prova4.pdb

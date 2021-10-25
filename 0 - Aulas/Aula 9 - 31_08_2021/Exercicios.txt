@@ -1,0 +1,121 @@
+'''def tab(n, i=10):
+  for c in range(1, i + 1):
+    print(f'{n} X {c} = {n * c}')
+
+
+n = int(input('Digite um número: '))
+tab(n)'''
+
+'''def linha():
+  print('-=' * 15)
+
+
+def saldo(x):
+  linha()
+  print(f'O seu saldo é de R${x:.2f}')
+
+
+def saque(x):
+  linha()
+  n = float(input('Quanto você deseja sacar? '))
+  x -= n
+  return x
+
+
+def deposito(x):
+  linha()
+  n = float(input('Quanto você deseja depositar? '))
+  x += n
+  return x
+
+
+s = 0
+while True:
+  linha()
+  print("""[ 1 ] Saldo
+[ 2 ] Saque
+[ 3 ] Depósito
+[ 4 ] Sair""")
+  x = int(input('Que opção deseja escolher? '))
+  if x == 1:
+    saldo(s)
+  elif x == 2:
+    s = saque(s)
+  elif x == 3:
+    s = deposito(s)
+  elif x == 4:
+    break
+  else:
+    print('Valor inválido! Tente novamente.')
+
+linha()
+print('FIM DO PROGRAMA')'''
+
+'''def l():
+  print('-=' * 15)
+
+
+def soma(n1, n2):
+  return n1 + n2
+
+
+def sub(n1, n2):
+  return n1 - n2
+
+
+def mult(n1, n2):
+  return n1 * n2
+
+
+def div(n1, n2):
+  return n1 / n2
+
+
+n1 = float(input('Digite um número: '))
+n2 = float(input('Digite outro número: '))
+while True:
+  l()
+  print("""[ 1 ] SOMA
+[ 2 ] SUBTRAÇÃO
+[ 3 ] MULTIPLICAÇÃO
+[ 4 ] DIVISÃO
+[ 5 ] NOVOS NÚMEROS
+[ 6 ] SAIR""")
+  op = input('Selecione a operação desejada: ')
+  l()
+  if op == '1':
+    print(f'A soma entre {n1} e {n2} é igual a {soma(n1, n2)}')
+  elif op == '2':
+    print(f'A subtração entre {n1} e {n2} é igual a {sub(n1, n2)}')
+  elif op == '3':
+    print(f'A multiplicação entre {n1} e {n2} é igual a {mult(n1, n2)}')
+  elif op == '4':
+    print(f'A divisão entre {n1} e {n2} é igual a {div(n1, n2)}')
+  elif op == '5':
+    n1 = float(input('Digite um número: '))
+    n2 = float(input('Digite outro número: '))
+  elif op == '6':
+    break
+  else:
+    print('Valor inválido! Tente novamente.')
+
+print('FIM DO PROGRAMA')'''
+
+'''def reverse(list):
+  lista = []
+  for c in range(len(list)-1, -1, -1):
+    lista.append(list[c])
+  return lista
+
+
+
+lista = []
+for c in range(8):
+  n = int(input(f'Digite o {c + 1}º número: '))
+  lista.append(n)
+
+
+print()
+print(lista)
+print()
+print(reverse(lista))'''

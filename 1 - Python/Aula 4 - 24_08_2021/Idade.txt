@@ -1,0 +1,10 @@
+while True:
+    idade = int(input('Digite a sua idade: '))
+    if idade >= 0 and idade <= 122:
+        break
+    print('Idade inválida! Tente novamente.')
+
+if idade < 18:
+    print('Menor de idade!')
+else:
+    print('Maior de idade!')

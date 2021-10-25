@@ -1,0 +1,183 @@
+'''def fatorial(x):
+  if x < 0:
+    return False
+  for c in range(1, x):
+    x *= c
+  return x
+
+
+n = int(input('Digite um número: '))
+print(f'{n}! = ', end = '')
+for c in range(n, 0, -1):
+  if c == 1:
+    print('1 = ', end = '')
+  else:
+    print(f'{c} x ', end = '')
+
+print(fatorial(n))'''
+
+
+'''def dateFormat(data):
+  mes = ('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro')
+  data = separa(data, '/')
+  if int(data[0]) < 0 or int(data[0]) > 31:
+    return False
+  if int(data[1]) < 1 or int(data[1]) > 12:
+    return False
+  x = f'{data[0]} de {mes[int(data[1])-1]} de {data[2]}'
+  return x
+
+def dateFormat(data):
+  meses = ('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro')
+  meses30 = ('Abril', 'Junho', 'Setembro', 'Novembro')
+  dia = data[:2]
+  mes = data[3:5]
+  ano = data[6:10]
+  if int(dia) < 1 or int(dia) > 31 or int(mes) < 1 or int(mes) > 12:
+    return False
+  if int(mes) == 2 and int(dia) > 29:
+    return False
+  elif meses[int(mes)-1] in meses30 and int(dia) > 30:
+    return False
+  x = f'{dia} de {meses[int(mes)-1]} de {ano}'
+  return x
+
+data = input('Digite uma data: ')
+print(dateFormat(data))'''
+
+'''def Bio(DNA):
+  DNA = DNA.upper()
+  RNA = ''
+  valido = True
+  for c in DNA:
+    if c == 'G':
+      RNA += 'C'
+    elif c == 'C':
+      RNA += 'G'
+    elif c == 'T':
+      RNA += 'A'
+    elif c == 'A':
+      RNA += 'U'
+    else:
+      valido = False
+  if valido:
+    return RNA
+  else:
+    return 'Cadeia de DNA inválida!'
+
+try:
+  dna = input('Digite uma cadeia de DNA: ')
+except KeyboardInterrupt:
+  print()
+  print('\nErro: KeyboardInterrupt (Ctrl + C)')
+  dna = ''
+finally:
+  print(f'\nDNA: {dna.upper()}')
+  print(f'RNA: {Bio(dna)}')'''
+
+'''def l():
+  print('-=' * 15)
+
+
+def soma(n1, n2):
+  return n1 + n2
+
+
+def sub(n1, n2):
+  return n1 - n2
+
+
+def mult(n1, n2):
+  return n1 * n2
+
+
+def div(n1, n2):
+  while True:
+    try:
+      d = n1 / n2
+    except ZeroDivisionError:
+      print('Valor Inválido! Divisão por zero.')
+    break
+  try:
+    return d
+  except UnboundLocalError:
+    pass
+
+while True:
+  try:
+    n1 = float(input('Digite um número: '))
+  except ValueError:
+    print('Erro: Valor Inválido!')
+    continue
+  except KeyboardInterrupt:
+    print()
+    print('Erro: KeyboardInterrupt (Ctrl + C)')
+    continue
+  break
+while True:
+  try:
+    n2 = float(input('Digite outro número: '))
+  except ValueError:
+    print('Erro: Valor Inválido!')
+    continue
+  except KeyboardInterrupt:
+    print()
+    print('Erro: KeyboardInterrupt (Ctrl + C)')
+    continue
+  break
+
+while True:
+  l()
+  print("""[ 1 ] SOMA
+[ 2 ] SUBTRAÇÃO
+[ 3 ] MULTIPLICAÇÃO
+[ 4 ] DIVISÃO
+[ 5 ] NOVOS NÚMEROS
+[ 6 ] SAIR""")
+  while True:
+    try:
+      op = input('Selecione a operação desejada: ')
+    except KeyboardInterrupt:
+      print()
+      print('Erro: KeyboardInterrupt (Ctrl + C)')
+      continue
+    break
+  l()
+  if op == '1':
+    print(f'A soma entre {n1} e {n2} é igual a {soma(n1, n2)}')
+  elif op == '2':
+    print(f'A subtração entre {n1} e {n2} é igual a {sub(n1, n2)}')
+  elif op == '3':
+    print(f'A multiplicação entre {n1} e {n2} é igual a {mult(n1, n2)}')
+  elif op == '4':
+    if div(n1, n2) != None:
+      print(f'A divisão entre {n1} e {n2} é igual a {div(n1, n2)}')
+  elif op == '5':
+    while True:
+      try:
+        n1 = float(input('Digite um número: '))
+      except ValueError:
+        print('Erro: Valor Inválido!')
+        continue
+      except KeyboardInterrupt:
+        print()
+        print('Erro: KeyboardInterrupt (Ctrl + C)')
+        continue
+      break
+    while True:
+      try:
+        n2 = float(input('Digite outro número: '))
+      except ValueError:
+        print('Erro: Valor Inválido!')
+        continue
+      except KeyboardInterrupt:
+        print()
+        print('Erro: KeyboardInterrupt (Ctrl + C)')
+        continue
+      break
+  elif op == '6':
+    break
+  else:
+    print('Valor inválido! Tente novamente.')
+
+print('FIM DO PROGRAMA')'''

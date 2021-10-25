@@ -1,0 +1,12 @@
+Algoritmo Média
+
+Início
+	Var
+		real: n1, n2, n3, n4, resultado;
+
+	Leia n1, n2, n3, n4;
+	resultado = (n1 + n2 + n3 + n4) / 4;
+
+	Escreva "Sua média é " + resultado;
+
+Fim.

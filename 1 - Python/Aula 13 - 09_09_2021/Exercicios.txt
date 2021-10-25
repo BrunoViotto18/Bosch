@@ -1,0 +1,93 @@
+'''dicionario = {}
+
+while True:
+  nome = input('Digite  seu nome: ')
+  if nome == '':
+    break
+  telefone = input('Digite o seu número de telefone: ')
+  if telefone == '':
+    break
+  dicionario[nome] = telefone
+
+try:
+  arq = open('Arquivo.txt', 'w+')
+except Exception:
+  print('ERRO!')
+finally:
+  arq.close()
+
+try:
+  arq = open('Arquivo.txt', 'rt+')
+  for k, v in dicionario.items():
+    arq.write(f'{k}: {v}\n')
+except Exception:
+  print('ERRO!')
+finally:
+  arq.close()'''
+
+'''dicionario = {}
+lista = []
+lista_menor = []
+
+while True:
+  nome = input('Digite o seu nome: ')
+  if nome == '':
+    break
+  while True:
+    try:
+      idade = int(input('Digite a sua idade: '))
+    except Exception:
+      print('Valor inválido! Tente novamente.')
+      continue
+    break
+  cpf = input('Digite o seu CPF: ')
+  dicionario['Nome'] = nome
+  dicionario['Idade'] = idade
+  dicionario['CPF'] = cpf
+  lista.append(dicionario.copy())
+
+for c in lista:
+  if c['Idade'] < 18:
+    lista_menor.append(c)
+
+try:
+  arq = open('Arquivo.txt', 'w')
+except Exception:
+  print('ERRO!')
+finally:
+  arq.close()
+
+try:
+  arq = open('Arquivo.txt', 'rt+')
+  for c in lista_menor:
+    for k, v in c.items():
+      arq.write(f'{k}: {v}\n')
+    arq.write('\n')
+except Exception:
+  print('ERRO!')
+finally:
+  arq.close()'''
+
+'''dicionario = {}
+
+while True:
+  cpf = input('Digite o seu CPF: ')
+  nome = input('Digite o seu nome: ')
+  while True:
+    try:
+      idade = input('Digite a sua idade: ')
+    except Exception:
+      print('ERRO!')
+      continue
+    break
+  dicionario[cpf] = [nome, idade]
+  while True:
+    con = input('Deseja continuar? [S/N] ').lower()[0]
+    if con in 'sn':
+      break
+  if con == 'n':
+    break
+
+print()
+for k, v in dicionario.items():
+  print(f'{k}: {v[0]} - {v[1]}')'''

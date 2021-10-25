@@ -1,0 +1,6 @@
+José,Matemática,15461558
+Juca,Filosofia,32456853
+Jubileu,Sociologia,12586523
+Lucas,Psicologia,15965852
+Hugor,Elétrica,25485632
+Marcos,Letras,45321687

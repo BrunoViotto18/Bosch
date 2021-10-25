@@ -1,0 +1,4 @@
+lista = [5, 9, 64, 8, 48, 12, 10, 7]
+print(lista)
+n = int(input('Escolha uma posição: ')) - 1
+print(lista[n:])

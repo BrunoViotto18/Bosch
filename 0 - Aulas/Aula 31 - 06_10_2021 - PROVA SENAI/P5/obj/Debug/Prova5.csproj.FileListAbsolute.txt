@@ -1,6 +1,0 @@
-C:\Users\disrct\Desktop\Prova5\bin\Debug\Prova5.exe.config
-C:\Users\disrct\Desktop\Prova5\bin\Debug\Prova5.exe
-C:\Users\disrct\Desktop\Prova5\bin\Debug\Prova5.pdb
-C:\Users\disrct\Desktop\Prova5\obj\Debug\Prova5.csproj.CoreCompileInputs.cache
-C:\Users\disrct\Desktop\Prova5\obj\Debug\Prova5.exe
-C:\Users\disrct\Desktop\Prova5\obj\Debug\Prova5.pdb

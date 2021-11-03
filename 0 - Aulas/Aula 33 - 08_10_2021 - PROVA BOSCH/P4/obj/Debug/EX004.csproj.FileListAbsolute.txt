@@ -1,7 +1,0 @@
-S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\PROVA BOSCH\EX004\bin\Debug\EX004.exe.config
-S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\PROVA BOSCH\EX004\bin\Debug\EX004.exe
-S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\PROVA BOSCH\EX004\bin\Debug\EX004.pdb
-S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\PROVA BOSCH\EX004\obj\Debug\EX004.csproj.AssemblyReference.cache
-S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\PROVA BOSCH\EX004\obj\Debug\EX004.csproj.CoreCompileInputs.cache
-S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\PROVA BOSCH\EX004\obj\Debug\EX004.exe
-S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\PROVA BOSCH\EX004\obj\Debug\EX004.pdb

@@ -17,7 +17,9 @@ def getLineItem(arq, linha:int, coluna:str) -> str:
     for c in range(0, linha-1):
         arq.readline()
     linha = arq.readline()
-    linha = linha[index-1:]
+    for c in range(index-1):
+        indice = linha.index(';')
+        linha = linha[indice+1:]
     string = ''
     for c in linha:
         if c == ';':
@@ -29,10 +31,12 @@ def getLineItem(arq, linha:int, coluna:str) -> str:
 def getCollumns(arq, *colunas) -> list:
     lista = []
     for c in range(0, len(colunas)):
+        arq.seek(0)
         coluna = []
-        for i in range(1, len(arq.readlines())+1):
+        for i in range(2, len(arq.readlines())+1):
             coluna.append(getLineItem(arq, i, colunas[c]))
-        lista.append(coluna)
+        lista.append(coluna[:])
+        print(coluna, "AAAA")
     return lista
 
 
@@ -41,6 +45,7 @@ def main():
         arq = open("Arquivo.csv", 'rt+')
         #EX001
         lista = getCollumns(arq, 'marca', 'preco US$')
+        print(lista)
         marcas = lista[0]
         precos = lista[1]
         media = {}

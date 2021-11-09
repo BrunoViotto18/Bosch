@@ -1,8 +1,3 @@
-/*body, h1, h2, h3, p, ul{
-    margin: 0;
-    padding: 0;
-}*/
-
 *{
     margin: 0;
     padding: 0;
@@ -14,11 +9,93 @@ body{
     color: #252525;
 }
 
-/* MENU */
+/* Menu */
 
 .menu{
     background: #252525;
-    padding: 20px, 0px;
+    padding: 20px 0px;
+}
+
+.menu-container{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.menu-container::after,  .menu-container::before{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+a.menu-logo{
+    display: block;
+    float: left;
+    margin-left: 10px;
+}
+
+.menu-nav{
+    float: right;
+    margin-right: 10px;
+}
+
+.menu-nav li{
+    display: inline-block;
+}
+
+.menu-nav a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.125em;
+}
+
+/*Only Screen*/
+
+@media(max-width: 739px){
+    .menu{
+        text-align: center;
+    }
+
+    a.menu-logo{
+        float: none;
+        margin: 0 auto;
+    }
+
+    .menu-nav{
+        float: none;
+        clear: both;
+    }
+}
+
+/* Intro */
+
+.intro{
+    background: url('../img/bg-intro.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 150px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.intro h1{
+    text-transform: uppercase;
+    font-size: 3em;
+}
+
+.intro h1::after{
+    content: '';
+    display: block;
+    width: 20px;
+    height: 4px;
+    background: #fff;
+    margin: 10px auto;
+}
+
+@media (max-width: 739px){
+    .intro{
+        padding: 60px 0;
+    }
 }
 
 

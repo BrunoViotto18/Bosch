@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('S:\\COM\\Human_Resources\\01.Engineering_Tech_School\\02.Internal\\10 - Aprendizes\\5 - Desenvolvimento de Sistemas\\Bruno Viotto Dos Santos\\Aula - 17_09_2021 - PROVA BOSCH\\netflix_titles.csv')
+df = pd.read_csv('S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\Aula - 17_09_2021 - PROVA BOSCH\netflix_titles.csv')
 df = df.dropna()
 df = df.loc[df['country'] == 'United States']
 df = df.loc[df['release_year'] >= 2015]
@@ -21,7 +21,7 @@ plt.xlabel('Anos')
 plt.ylabel('Quant. de Filmes')
 plt.title('Estatisticas de Filmes')
 plt.show()
-df = pd.read_csv('S:\\COM\\Human_Resources\\01.Engineering_Tech_School\\02.Internal\\10 - Aprendizes\\5 - Desenvolvimento de Sistemas\\Bruno Viotto Dos Santos\\Aula - 17_09_2021 - PROVA BOSCH\\netflix_titles.csv')
+df = pd.read_csv('S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\Aula - 17_09_2021 - PROVA BOSCH\netflix_titles.csv')
 df = df.loc[df['country'] == 'Brazil']
 df = df.sort_values(by='duration')
 print(df.head(5))

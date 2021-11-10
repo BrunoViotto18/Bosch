@@ -3,6 +3,14 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#My .gitignore
+
+- Repositórios/
+
+Aula 03_11_2021 - PROVA BOSCH DevOps/
+
+#My .gitignore
+
 # User-specific files
 *.rsuser
 *.suo
@@ -361,7 +369,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-
-Repositórios/
-
-Aula 03_11_2021 - PROVA BOSCH DevOps/

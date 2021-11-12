@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/logoets.ico" type="image/x-icon">
     <link href="//db.onlinewebfonts.com/c/952bab25f6798d6bb1937d67e9bee4dd?family=Sans" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="https://www.bosch.com.br/media/tech/styles/main.css?ver=1627985259056">
+    
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://www.bosch.com.br/media/tech/styles/main.css?ver=1627985259056">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    
-    
     <title>Engineering Technical School</title>
 </head>
 
@@ -27,9 +26,9 @@
             <div class="header-right">
                 <div class="menu">
                     <div class="hamburger">
-                        <div id="burger1"></div>
-                        <div id="burger2"></div>
-                        <div id="burger3"></div>
+                        <div class="burger1"></div>
+                        <div class="burger2"></div>
+                        <div class="burger3"></div>
                     </div>
                     <span class="menu-text menus">Menu</span>
                 </div>
@@ -39,33 +38,14 @@
                     <form aria-label="Side wide" role="search" class="M-SearchField__form ng-pristine ng-valid" ng-submit="$ctrl.onSubmit()" ng-click="$ctrl.openSearch()" tabindex="0"><a-icon-dynamic class="M-SearchField__search" data-name="'search'" ng-click="$ctrl.openSearch()" data-width="24" data-height="24" tabindex="-1" data-ng-attr-aria-label="{{$ctrl.ariaLabelSearchIcon}}" role="button" aria-label="Procurar">
                         <i class="fa fa-search A-Icon A-Icon--search" data-ng-class="[ 'A-Icon--' + $ctrl.name, $ctrl.variation &amp;&amp; 'A-Icon--' + $ctrl.variation, {'A-Icon--inverted': $ctrl.inverted} ]" data-ng-attr-width="{{$ctrl.width || 24}}" data-ng-attr-height="{{$ctrl.height || 24}}" width="24" height="24"><!---->
                             <use xlink:href="https://www.bosch.com.br/#search" data-ng-attr-xlink:href="{{$ctrl.name &amp;&amp; ('#' + $ctrl.name)}}"></use></i></a-icon-dynamic>
-                            <input onblur="voltarTamanho()" onclick="aumentarTamanho()" id="inputbusca" class="M-SearchField__input ng-pristine ng-valid ng-empty ng-touched" ng-style="$ctrl.viewport > 1 &amp;&amp; !$ctrl.isStatic &amp;&amp; !$ctrl.open &amp;&amp; {'width': $ctrl.calculatedWidth}" type="search" placeholder="Buscar" aria-label="Buscar" ng-model="$ctrl.searchTerm" ng-keyup="$ctrl.checkSearchTerm()" tabindex="-1" aria-invalid="false" style="width: 57px;"><!---->
+                            <input class="M-SearchField__input ng-pristine ng-valid ng-empty ng-touched" ng-style="$ctrl.viewport > 1 &amp;&amp; !$ctrl.isStatic &amp;&amp; !$ctrl.open &amp;&amp; {'width': $ctrl.calculatedWidth}" type="search" placeholder="Buscar" aria-label="Buscar" ng-model="$ctrl.searchTerm" ng-keyup="$ctrl.checkSearchTerm()" tabindex="-1" aria-invalid="false" style="width: 57px;"><!---->
                     </form><!---->
                     <div class="M-SearchField__widthCalculationWrapper">Buscar</div></m-search-field-dynamic> </div>
             </div>
         </div>
     </header>
 
-<!-- === Menu Bar === -->
-
-    <section class="menu-bar">
-        <div class="menu-bar-container">
-            <div class="menu1">
-                <ul>
-                    <li>Produtos e serviços</li>
-                    <li>Notícias e histórias</li>
-                    <li>Nossa empresa</li>
-                    <li>Carreiras</li>
-                    <li><a href="#">Imprensa</a></li>
-                </ul>
-            </div>
-            <div class="menu2">
-
-            </div>
-        </div>
-    </section>
-
-<!-- === Area do Aluno === -->
+<!-- === Login === -->
 
     <section class="login">
         <div class="login-container">
@@ -73,36 +53,13 @@
                 <h1>Logue com o seu EDV</h1>
             </div>
             <div class="edv">
-                <a-form-field class="A-FormField A-FormField-Input A-FormField-Input-Email">
-                    <div class="A-FormField__wrapper">
-                        <input type="text" class="A-FormField__element ng-pristine ng-empty ng-valid-email ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength ng-touched" name="uEmail" id="email-field" value="" data-ng-model="$LoginFormCtrl.user.email" data-ng-init="$LoginFormCtrl.user.email = ''" data-ng-required="true" data-ng-pattern="/.+@.+\..+/" data-ng-maxlength="255" required="required">      <label for="email-field" class="A-FormField__label">
-                        <span class="A-FormField__labelText">EDV</span></label>
-                        <span class="A-FormField__background"></span>
-                    </div>
-                    <div class="A-FormField__validation">
-                      <!---->
-                    </div>
-                  </a-form-field>
+                <form class="edv-form" ><input class="edv-input" placeholder="EDV"></form>
             </div>
             <div class="password">
-                <a-form-field class="A-FormField A-FormField-Input A-FormField-Input-Password">
-                    <div class="A-FormField__wrapper">
-                        <input type="password" class="A-FormField__element ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" name="uPassword" id="password-field" value="" data-ng-model="$LoginFormCtrl.user.password" data-ng-required="true" autocomplete="off" required="required">        <div class="formfield-password-visibility" data-ng-click="$ctrl.toggleVisibility()">
-                            <!----><div ng-if="($ctrl.$inputType === 'password')" class="">
-                            </div><!---->
-                            <!---->
-                          </div>
-                        <label for="password-field" class="A-FormField__label">
-                        <span class="A-FormField__labelText">Palavra-passe</span></label>
-                        <span class="A-FormField__background"></span>
-                    </div>
-                    <div class="A-FormField__validation">
-                      <!---->
-                    </div>
-                  </a-form-field>
+                <form class="password-form" ><input class="password-input" placeholder="Senha"></form>
             </div>
             <div class="login-options"></div>
-            <a href="areadoaluno.html" class="login-btn">
+            <a href="#" class="login-btn">
                 <span>Login</span>
             </a>
         </div>
@@ -117,20 +74,20 @@
 
         <div class="redes-sociais">
             <div class="redes-sociais-container">
-                <a href="#" class="rede-social">
+                <a href="https://www.facebook.com/BoschBrasil" class="rede-social" target="_blank">
                     <img src="images/facebook.png" alt="Logo Facebook">
                 </a>
     
-                <a href="#" class="rede-social">
+                <a href="https://twitter.com/Bosch_Brasil" class="rede-social" target="_blank">
                     <img src="images/twitter.png" alt="Logo Twitter">
                 </a>
     
-                <a href="#" class="rede-social">
+                <a href="https://www.youtube.com/user/BoschBrasilOficial" class="rede-social" target="_blank">
                     <img src="images/youtube.png" alt="Logo Youtube">
                 </a>
     
-                <a href="#" class="rede-social">
-                    <img src="images/linkedin.png" alt=" Logo Linkedin">
+                <a href="https://br.linkedin.com/company/boschbrasil" class="rede-social" target="_blank">
+                    <img src="images/linkedin.png" alt=" Logo Linkedin" >
                 </a>
             </div>
         </div>
@@ -143,7 +100,6 @@
             </div>
         </div>
     </footer>
-    <script src="js/script.js"></script>
 </body>
 
 </html>

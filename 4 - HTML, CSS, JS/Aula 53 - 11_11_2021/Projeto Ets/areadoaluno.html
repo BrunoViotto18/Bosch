@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/logoets.ico" type="image/x-icon">
     <link href="//db.onlinewebfonts.com/c/952bab25f6798d6bb1937d67e9bee4dd?family=Sans" rel="stylesheet" type="text/css"/>
-    
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://www.bosch.com.br/media/tech/styles/main.css?ver=1627985259056">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    
+    
+    
     <title>Engineering Technical School</title>
 </head>
 
@@ -18,53 +20,165 @@
     <header class="header">
         <div class="header-container">
             <div class="header-left">
-                <a href="#">
+                <a href="index.html">
                     <img src=images/logobosch.png>
                 </a>
             </div>
 
             <div class="header-right">
+
+    <!-- === Menu Button === -->
                 <div class="menu">
                     <div class="hamburger">
-                        <div class="burger1"></div>
-                        <div class="burger2"></div>
-                        <div class="burger3"></div>
+                        <div id="burger1"></div>
+                        <div id="burger2"></div>
+                        <div id="burger3"></div>
                     </div>
                     <span class="menu-text menus">Menu</span>
                 </div>
 
+    <!-- === Search Bar === -->
                 <div class="O-Header__mainRow__item O-Header__mainRow__search">
-                 <m-search-field-dynamic class="M-SearchField" data-placeholder="Buscar" data-label="Buscar" data-aria-label-search-form="Side wide" data-aria-label-search-icon="Procurar" data-aria-label-close-icon="Fechar" >
-                    <form aria-label="Side wide" role="search" class="M-SearchField__form ng-pristine ng-valid" ng-submit="$ctrl.onSubmit()" ng-click="$ctrl.openSearch()" tabindex="0"><a-icon-dynamic class="M-SearchField__search" data-name="'search'" ng-click="$ctrl.openSearch()" data-width="24" data-height="24" tabindex="-1" data-ng-attr-aria-label="{{$ctrl.ariaLabelSearchIcon}}" role="button" aria-label="Procurar">
-                        <i class="fa fa-search A-Icon A-Icon--search" data-ng-class="[ 'A-Icon--' + $ctrl.name, $ctrl.variation &amp;&amp; 'A-Icon--' + $ctrl.variation, {'A-Icon--inverted': $ctrl.inverted} ]" data-ng-attr-width="{{$ctrl.width || 24}}" data-ng-attr-height="{{$ctrl.height || 24}}" width="24" height="24"><!---->
-                            <use xlink:href="https://www.bosch.com.br/#search" data-ng-attr-xlink:href="{{$ctrl.name &amp;&amp; ('#' + $ctrl.name)}}"></use></i></a-icon-dynamic>
-                            <input class="M-SearchField__input ng-pristine ng-valid ng-empty ng-touched" ng-style="$ctrl.viewport > 1 &amp;&amp; !$ctrl.isStatic &amp;&amp; !$ctrl.open &amp;&amp; {'width': $ctrl.calculatedWidth}" type="search" placeholder="Buscar" aria-label="Buscar" ng-model="$ctrl.searchTerm" ng-keyup="$ctrl.checkSearchTerm()" tabindex="-1" aria-invalid="false" style="width: 57px;"><!---->
-                    </form><!---->
-                    <div class="M-SearchField__widthCalculationWrapper">Buscar</div></m-search-field-dynamic> </div>
+                    <m-search-field-dynamic class="M-SearchField" data-placeholder="Buscar" data-label="Buscar" data-aria-label-search-form="Side wide" data-aria-label-search-icon="Procurar" data-aria-label-close-icon="Fechar" >
+                        <form aria-label="Side wide" role="search" class="M-SearchField__form ng-pristine ng-valid" ng-submit="$ctrl.onSubmit()" ng-click="$ctrl.openSearch()" tabindex="0">
+                            <a-icon-dynamic class="M-SearchField__search" data-name="'search'" ng-click="$ctrl.openSearch()" data-width="24" data-height="24" tabindex="-1" data-ng-attr-aria-label="{{$ctrl.ariaLabelSearchIcon}}" role="button" aria-label="Procurar">
+                                <i class="fa fa-search A-Icon A-Icon--search" data-ng-class="[ 'A-Icon--' + $ctrl.name, $ctrl.variation &amp;&amp; 'A-Icon--' + $ctrl.variation, {'A-Icon--inverted': $ctrl.inverted} ]" data-ng-attr-width="{{$ctrl.width || 24}}" data-ng-attr-height="{{$ctrl.height || 24}}" width="24" height="24"><!---->
+                                    <use xlink:href="https://www.bosch.com.br/#search" data-ng-attr-xlink:href="{{$ctrl.name &amp;&amp; ('#' + $ctrl.name)}}"></use>
+                                </i>
+                            </a-icon-dynamic>
+                            <input onblur="voltarTamanho()" onclick="aumentarTamanho()" id="inputbusca" class="M-SearchField__input ng-pristine ng-valid ng-empty ng-touched" ng-style="$ctrl.viewport > 1 &amp;&amp; !$ctrl.isStatic &amp;&amp; !$ctrl.open &amp;&amp; {'width': $ctrl.calculatedWidth}" type="search" placeholder="Buscar" aria-label="Buscar" ng-model="$ctrl.searchTerm" ng-keyup="$ctrl.checkSearchTerm()" tabindex="-1" aria-invalid="false" style="width: 57px;"><!---->
+                        </form><!---->
+                        <div class="M-SearchField__widthCalculationWrapper">Buscar</div>
+                    </m-search-field-dynamic>
+                </div>
             </div>
         </div>
     </header>
 
-<!-- === Login === -->
+    <!-- === Menu === -->
 
-    <section class="login">
-        <div class="login-container">
-            <div class="login-ets">
-                <h1>Logue com o seu EDV</h1>
-            </div>
-            <div class="edv">
-                <form class="edv-form" ><input class="edv-input" placeholder="EDV"></form>
-            </div>
-            <div class="password">
-                <form class="password-form" ><input class="password-input" placeholder="Senha"></form>
-            </div>
-            <div class="login-options"></div>
-            <a href="#" class="login-btn">
-                <span>Login</span>
-            </a>
+    <section class="menu-bar">
+        <div class="menu-bar-container">
+
+            <!--1º Menu-->
+            <ul class="menu1">
+                <li>Produtos e serviços</li>
+                <li>Notícias e histórias</li>
+                <li>Nossa empresa</li>
+                <li>Carreiras</li>
+                <li><a href="#">Imprensa</a></li>
+            </ul>
+            
         </div>
     </section>
 
+<!-- === Area do Aluno === -->
+
+    <section class="main">
+        <div class="main-container">
+            <section class="prova-senai">
+                <h2>Prova SENAI</h2>
+                <div class="nota">
+                    Nota: 9,0
+                </div>
+                <div onclick="openModalsenai('dv-modal-senai')" class="nota-senai-btn">
+                    Mais Detalhes
+                </div>
+                <div id="dv-modal-senai" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Prova Senai Python</h3>
+                        </div>
+                        <div class="modal-body senaimodal">
+                            <div class="um">Questão 01: 3,0</div>
+                            <div class="dois">Questão 02: 2,5</div>
+                            <div class="tres">Questão 03: 1,5</div>
+                            <div class="quatro">Questão 04: 2,0</div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn" onclick="closeModalsenai('dv-modal-senai')">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="prova-bosch">
+                <h2>Prova BOSCH</h2>
+                <div class="nota">
+                    Nota: 9,3
+                </div>
+                <div onclick="openModal('dv-modal')" class="nota-bosch-btn">
+                    Mais Detalhes
+                </div>
+                <div id="dv-modal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Prova Bosch Python</h3>
+                        </div>
+            
+                        <div class="modal-body">
+                            <div class="um">Questão 01: 1,0</div>
+                            <div class="dois">Questão 02: 1,0</div>
+                            <div class="tres">Questão 03: 1,0</div>
+                            <div class="quatro">Questão 04: 0,6</div>
+                            <div class="cinco">Questão 05: 0,7</div>
+                            <div class="seis">Questão 06: 1,0</div>
+                            <div class="sete">Questão 07: 1,0</div>
+                            <div class="oito">Questão 08: 1,0</div>
+                            <div class="nove">Questão 09: 1,0</div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn" onclick="closeModal('dv-modal')">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="competencias">
+                <div class="options">
+                    <div id="botao1" class="botoes">Python</div>
+                    <div id="botao2" class="botoes">C#</div>
+                    <div id="botao3" class="botoes">DevOps</div>
+                    <div id="botao4" class="botoes">Web</div>
+                </div>
+
+                <div class="info-aluno">
+                    <h3>Nome: Aluno</h3>
+                    <h4>Matéria: Python</h4>
+                </div>
+
+                <div class="competencias-container">
+                    <div class="competencia apto">Criar um programa</div>
+                    <div class="competencia apto">Declarar variáveis</div>
+                    <div class="competencia apto">Compreender tipos</div>
+                    <div class="competencia apto">Inserir dados</div>
+                    <div class="competencia apto">Exibir resultados</div>
+                    <div class="competencia apto">Operadores aritiméticos</div>
+                    <div class="competencia apto">Manipulação de listas</div>
+                    <div class="competencia falta">Manipulação de tuplas</div>
+                    <div class="competencia nao-apto">Manipulação de dicionários</div>
+                    <div class="competencia apto">Loop For</div>
+                    <div class="competencia apto">Loop While</div>
+                    <div class="competencia nao-apto">Tratamento de excessões</div>
+                    <div class="competencia apto">Uso do If</div>
+                    <div class="competencia apto">Uso do else e elif</div>
+                    <div class="competencia apto">Uso de funções</div>
+                    <div class="competencia falta">Uso de bibliotecas</div>
+                    <div class="competencia nao-apto">Manipulação de arquivos</div>
+                    <div class="competencia falta">Criação de arrays</div>
+                    <div class="competencia falta">Manipulação de arrays</div>
+                    <div class="competencia falta">Manipulação<br>de arrays<br>Multidimensionais</div>
+                    <div class="competencia nao-apto">Criar Series (Pandas)</div>
+                    <div class="competencia apto">Criar DataFrame<br>(Pandas)</div>
+                    <div class="competencia apto">Manipular dados</div>
+                    <div class="competencia apto">Exibir dados</div>
+                    <div class="competencia nao-apto">Criar gráficos</div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+   
 <!-- === Footer === -->
 
     <footer class="footer">
@@ -74,20 +188,20 @@
 
         <div class="redes-sociais">
             <div class="redes-sociais-container">
-                <a href="https://www.facebook.com/BoschBrasil" class="rede-social" target="_blank">
+                <a href="#" class="rede-social">
                     <img src="images/facebook.png" alt="Logo Facebook">
                 </a>
     
-                <a href="https://twitter.com/Bosch_Brasil" class="rede-social" target="_blank">
+                <a href="#" class="rede-social">
                     <img src="images/twitter.png" alt="Logo Twitter">
                 </a>
     
-                <a href="https://www.youtube.com/user/BoschBrasilOficial" class="rede-social" target="_blank">
+                <a href="#" class="rede-social">
                     <img src="images/youtube.png" alt="Logo Youtube">
                 </a>
     
-                <a href="https://br.linkedin.com/company/boschbrasil" class="rede-social" target="_blank">
-                    <img src="images/linkedin.png" alt=" Logo Linkedin" >
+                <a href="#" class="rede-social">
+                    <img src="images/linkedin.png" alt=" Logo Linkedin">
                 </a>
             </div>
         </div>
@@ -100,6 +214,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

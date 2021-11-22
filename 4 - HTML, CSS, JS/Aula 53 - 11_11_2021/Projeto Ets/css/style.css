@@ -1,8 +1,8 @@
 @import url(//db.onlinewebfonts.com/c/952bab25f6798d6bb1937d67e9bee4dd?family=Sans);
 
 *{
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     box-sizing: border-box;
 }
 
@@ -11,16 +11,11 @@ body{
     background-color: #eee;
     color: #252525;
     position: relative;
-    overflow-y: hidden;
+    overflow-x: hidden;
+    /*overflow-y: hidden;*/
 }
 
 /* Header */
-
-@media (min-width: 768px){
-    .header {
-        height: 102px;
-    }
-}
 
 .header::before{
     position: absolute;
@@ -38,7 +33,7 @@ body{
     background-color: #fff;
     position: relative;
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     z-index: 10;
 }
 
@@ -53,7 +48,7 @@ body{
 }
 
 .header-right{
-    width: 1025px;
+    width: 250px;
     display: flex;
     flex-direction: row-reverse;
     height: 100%;
@@ -64,7 +59,8 @@ body{
     display: block;
 }
 
-.header-container img  {
+.header-container img{
+    margin-top: 16px;
     max-width: 144px;
     display: block;
 }
@@ -82,16 +78,20 @@ body{
     height: 50px;
 }
 
-
 .header-container .busca img{
     height: 24px;
     width: 24px;
 }
 
 input[type=search] {
+    margin-top: 16px;
     -webkit-appearance: textfield;
     box-sizing: content-box;
     transition: all 0.3s ease-in-out;
+}
+
+.fa{
+    margin-top: 16px;
 }
 
 .iconbusca{
@@ -123,9 +123,11 @@ input[type=search] {
 /* MENU - MENU*/
 
 .menu{
+    margin-top: 16px;
     align-self: center;
     display: flex;
     flex-direction: row;
+    margin-left: 20px;
 }
 
 .menu:hover{
@@ -152,10 +154,37 @@ input[type=search] {
     background-color: #252525;
     height: 1px;
     width: 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+.burger1-js{
+    position: absolute;
+    transform: rotate(-45deg);
+}
+
+.burger2-js{
+    display: none;
+}
+
+.burger3-js{
+    position: absolute;
+    transform: rotate(45deg);
 }
 
 .menu-text{
     margin: 0 0 0 10px;
+}
+
+@media (min-width: 300px){
+    .header{
+        height: 102px;
+    }
+}
+
+@media (max-width: 1180px){
+    .header-container{
+        max-width: calc(100vw - 50px);
+    }
 }
 
 /* Menu Bar */
@@ -164,7 +193,7 @@ input[type=search] {
     background-color: #fff;
     position: absolute;
     top: -333px;
-    height: 435px;
+    /*height: 435px;*/
     width: 100vw;
     transition: all 0.3s ease-in-out;
     z-index: -1;
@@ -180,27 +209,41 @@ input[type=search] {
     margin: 0 auto;
 }
 
-.menu1 ul li{
+.menu1{
+    margin: 30px
+     0;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu1 li {
     color: #000;
     line-height: 1.4;
     font-size: 1.5rem;
     cursor: pointer;
     list-style: none;
+    margin-bottom: 25px;
 }
 
-.menu1 ul li a{
+.menu1 li a{
     color: #000;
 }
 
-.menu1 ul li:hover{
+.menu1 li:hover{
     color: #007bc0;
+}
+
+@media (max-width: 1180px){
+    .menu-bar-container{
+        padding: 0 16px;
+    }
 }
 
 /* Login */
 
 .login{
     width: 100%;
-    height: calc(100vh - 305px - 16px);
+    /*height: calc(100vh - 305px - 16px);*/
 }
 
 .login-container{
@@ -226,17 +269,29 @@ input[type=search] {
     border-bottom: 2px solid #008ecf;
 }
 
+@media (max-width: 800px){
+    .login-container{
+        width: calc(100vw - 20px);
+    }
+}
+
 /* Footer */
 
 .footer{
+    display: block;
     position: relative;
     bottom: 0px;
+    width: 100%;
 }
 
 .redes-sociais-texto{
     max-width: 1170px;
-    margin: 0 auto 15px;
+    margin: 0 auto;
     text-align: center;
+}
+
+.redes-sociais-texto p{
+    margin: 15px 0 10px;
 }
 
 .redes-sociais{
@@ -297,4 +352,356 @@ input[type=search] {
     background-size: cover;
     background-position: center center;
     background-image: url(../images/linha-bosch.png);
+}
+
+@media (max-width: 980px){
+    .footer-copyright{
+        flex-direction: column-reverse;
+    }
+    .copyright-links *{
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 740px){
+    .copyright-links{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-height: 920px){
+    .footer{
+        position: fixed;
+        bottom: 16px;
+    }
+}
+
+/* Área do Aluno */
+.options{
+    position: absolute;
+    top: -34px;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+.botoes{
+	display:inline-block;
+	width:fit-content;
+	border-radius: 5px 5px 0 0;
+	color:white;
+	padding: 5px 10px;
+    cursor: pointer;
+}
+
+#botao1{
+	background-color:#b92532;
+}
+#botao1:hover{
+	background-color:#d61828;
+}
+
+#botao2{
+	background-color:#64439a;
+}
+#botao2:hover{
+	background-color:#5928a8;
+}
+
+#botao3{
+	background-color:#229ec5;
+}
+#botao3:hover{
+	background-color:#00bef8;
+}
+
+#botao4{
+	background-color:#7abb78;
+}
+#botao4:hover{
+	background-color:#3fbb3b;
+}
+
+.main{
+    margin-top: 60px;
+    margin-bottom: 30px;
+    width: 100%;
+    height: fit-content;
+}
+
+.prova-senai{
+    grid-area: provasenai;
+}
+
+.prova-bosch{
+    grid-area: provabosch;
+}
+
+.competencias{
+    position: relative;
+    grid-area: competencias;
+}
+
+.main-container{
+    display: grid;
+    grid-template-areas: 
+    "provasenai competencias"
+    "provabosch competencias";
+    grid-template-columns: 2fr 5fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    height: 100%;
+    width: 1000px;
+    max-width: calc(100vw - 50px);
+    margin: 0 auto;
+}
+
+.prova-bosch h2, .prova-senai h2{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+
+.prova-senai, .prova-bosch, .competencias{
+    background-color: #fff;
+    padding: 20px;
+}
+
+.nota{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.nota-bosch-btn, .nota-senai-btn{
+    border: 1px solid #008ecf;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.nota-bosch-btn:hover, .nota-senai-btn:hover{
+    color: #008ecf;
+    background-color: #eaeaea;
+}
+
+.competencias-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 2px;
+    width: 100%;
+    height: 75%;
+    padding: 5px;
+}
+
+.competencia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}
+
+.apto{
+    background: rgb(24,136,226);
+    background: linear-gradient(0deg, rgba(24,136,226,0.5) 0%, rgba(67,163,240,0.5) 35%, rgba(99,175,236,0.4) 100%);
+}
+
+.nao-apto{
+    background: rgb(242,14,6);
+    background: linear-gradient(90deg, rgba(242,14,6,1) 0%, rgba(245,43,36,1) 35%, rgba(223,80,75,1) 100%); 
+}
+
+.falta{
+    background: rgb(229,237,0); 
+    background: linear-gradient(90deg, rgba(229,237,0,1) 0%, rgba(233,240,43,1) 35%, rgba(230,235,93,1) 100%);  
+}
+
+
+.apto{
+    background: #4DC6F7;
+}
+
+.nao-apto{
+    background: #F76580;
+}
+
+.falta{
+    background: #FCF44C;   
+}
+
+
+.apto{
+    background: #7FFFD6;
+}
+
+.nao-apto{
+    background: #EE94FF;
+}
+
+.falta{
+    background: #FFD66B;   
+}
+
+
+@media (max-width: 1080px){
+    .main-container{
+        grid-template-areas: 
+        "competencias competencias"
+        "provasenai provabosch";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 5fr 2fr;
+        gap: 20px;
+        height: 100%;
+        width: 1000px;
+        max-width: calc((100vw - 50px));
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 860px){
+    .competencias-container{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(7, 1fr);
+    }
+}
+
+@media (max-width: 680px){
+    .competencias-container{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(9, 1fr);
+    }
+}
+
+@media (max-width: 600px){
+    .main-container{
+        grid-template-areas: 
+        'competencias'
+        'provasenai'
+        'provabosch';
+        grid-template-columns: 1fr;
+        grid-template-rows: 7fr 2fr 2fr;
+    }
+}
+
+@media (max-width: 500px){
+    .competencias-container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(13, 1fr);
+    }
+}
+
+  .content {
+    margin: 0 auto;
+    max-width: 900px;
+    background-color: #eee;
+    padding: 10px;
+}
+
+.btn {
+    border: 1px solid #008ecf;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.btn:hover {
+    color: #008ecf;
+    background-color: #eaeaea;
+}
+.modal {
+    background-color: rgba(0, 0, 0, .8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    z-index:100;
+}
+.modal-body{
+    display: grid;
+    grid-template-areas: 
+    "um quatro sete"
+    "dois cinco oito"
+    "tres seis nove";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+    height: 200px;
+}
+.senaimodal{
+    display: grid;
+    grid-template-areas: 
+    "um tres"
+    "dois quatro";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    height: 200px;
+}
+.modal-body > * {
+    background-color: #E0E0E0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.modal-content {
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 600px;
+    height: 400px;
+    background-color: #eee;
+    padding: 0;
+    box-shadow: 0 0 2px #fff;
+    transform:translate(-50%,-50%);
+    top:50%;
+    left: 50%;
+    position: absolute;
+}
+.um{
+    grid-area: um;
+}
+.dois{
+    grid-area: dois;
+}
+.tres{
+    grid-area: tres;
+}
+.quatro{
+    grid-area: quatro;
+}
+.cinco{
+    grid-area: cinco;
+}
+.seis{
+    grid-area: seis;
+}
+.sete{
+    grid-area: sete;
+}
+.oito{
+    grid-area: oito;
+}
+.nove{
+    grid-area: nove;
+}
+.modal-header h3{
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-header, .modal-body, .modal-footer{
+    padding: 20px;
+}
+.modal-footer{
+    background-color: rgb(231, 231, 231);
 }

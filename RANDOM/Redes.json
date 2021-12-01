@@ -1,0 +1,131 @@
+[
+	"Elementos Básicos":
+	{
+		"Regras": "Protocolos",
+		"Meio fisico": "Meio de transporte da mensagem", 
+		"Mensagens": "Informação",
+		"Dispositivos": "Equipamentos de Rede"
+	},
+	
+	"Packet Tracer": "Programa de simulação de redes",
+	
+	"Redes Múltiplas": "Cada serviço possui suas regras e padrões",
+	
+	"Redes Convergidas": "Consolidação de múltiplas redes em uma única plataforma (Rede multiplataforma)",
+	
+	"Arquitetura da Rede":
+	{
+		"Tolerância a falhas": "Limita o impacto de uma falha no hardware ou software (Redundância)",
+		"Escalabilidade": "Fácil expansão para o suporte de mais usuários e apliccações (sem impactar o desempenho)",
+		"Qualidade de Serviço": "Prioridades correspondentes ao tipo de comunicação (QoS)",
+		"Segurança":
+		{
+			"Física": "Equipamentos vulneráveis em locais seguros, permissão para acesso físico do equipamento, segurança contra incêndios, etc...",
+			"Lógica": "Antivírus, Firewall, Autenticação de usuários"
+		}
+	},
+
+	"Tríade da Segurança":
+	{
+		"Confidencialidade": ["Autenticação do usuário", "Criptografia"],
+		"Manter Integridade": "Assinatura Digital",
+		"Garantir Disponibilidade": ["Firewall", "Redundancia", "Evitar um único ponto de falha"]
+	},
+	
+	"Segmentação de Dados": 
+	{
+		"Segmentação": "Divisão de dados na hora de envio das informações",
+		"Multiplexação": "Intercalação dos dados na rede e reenvio de pacotes perdidos no envio"
+	},
+	
+	"Componentes":
+	{
+		"Dispositivos Fisicos":
+		{
+			"Dispositivos Fisicos",
+			"Palca de Rede": "Entrada e saída de rede dos dispositivos",
+			"HUB": "Dispositivo para a interligação entre dispositivos (Ineficiente)",
+			"Switch": "Realiza o reconhecimento e interliga os dispositivos(tabela AR?)",
+			"Roteador": "Encaminhamento de pacotes",
+			"Modem": "Modulador e Demodulador de sinal. De sinal analógico para sinal digital",
+			"Acces Point (AP)": "Transmissão do sinal do cabo para o sinal wi-fi",
+		},
+		
+		"Meios Físicos":
+		{
+			"Cabo de par trançado STP(Shielded Twisted Pair)": ["dois pares", "Emprego em redes Token Ring", "Conector type-1"],
+			"Cabo de par trançado UTP(Unshielded Twisted Pair)": ["de 2 a 4 pares", "Ethernet (10 Base T) e Token Ring", "Conector RJ-45"],
+			"Cabo Coaxial": ["Cabo de cobre", "Conector BNC"],
+			"Fibra Ótica": ["Alto Custo", "Imune a interferência eletro magnética", "Dificuldade para fazer junções", "Longas Distâncias"],
+			"Radiofusão": "Rádio Frequência",
+			"Critérios": ["Distância", "Ambiente", "Qunatidade de dados/Velocidade", "Custo"]
+		},
+		
+		"Serviços":
+		{
+			"Softwares da rede"
+		}
+	},
+	
+	"Classificação de redes":
+	{
+		"Dispersão geográfica":
+		{
+			"LAN (Local Area Network)": ["Curta dsitância", "Prédio único", "Alta velocidade"],
+			"MAN (Metropolitan Area Network)": "Áreas específicas",
+			"WAN (Wide Area Network"): ["Área dispersas", "Maior custo e complexidade", "Interconexão de várias redes"],
+			"PAN (Persona Area Network)": "Telefone/Bluetooth",
+			"VAN": NULL,
+			"CAN": NULL
+		}
+		
+		"Interconexão de Redes":
+		{
+			"Topologia fisica":
+			{
+				"Ponto a Ponto":
+				{
+					"Vantagem": ["Baixo Custo", "Fácil implementação", "Funciona sem conexão de rede"],
+					"Desvantagem": ["Ausência de administrador", "Não escalável", "Baixa segurança"]
+				},
+				"Multi Ponto":
+				{
+					"Vantagens": ["Maior desempenho", "Alta segurança", "Manutenção centralizada"],
+					"Desvantagem": ["Custo mais elevaod", "Necessidade de mão-de-obra especializada", "Dependência do servidor"],
+				},
+				"Anel": NULL,
+				"Barra": NULL,
+				"Estrela": NULL,
+				"Malha": NULL,
+				"Sem fio":
+				{
+					"Problemas": ["Segurança fisica e lógica", "Interferência no mesmo espectro", "Obstáculos"],
+					"Vantagens": ["Mobilidade", "Escalabilidade"]
+				},
+				"Redes Híbridas": NULL
+			},
+			
+			"Topologia Lógica":
+			{
+				"Simplex"
+				"Half-Duplex"
+				"Full Duplex"
+			},
+			
+			"Tipos de servidores": ["Servidor de arquivos", "Servidor de impressão", "Servidor de aplicações"]
+		}
+	}
+	
+	"Modelo OSI(7 Camadas)":
+	[
+		"1-Fisica",
+		"2-Enlace de dados",
+		"3-Rede",
+		"4-Transporte",
+		"5-Sessões",
+		"6-Apresentação",
+		"7-Aplicação"
+	]
+	
+	"Atividade(3ª Camada)": ["Objetivo da camada", 
+]

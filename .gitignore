@@ -3,13 +3,13 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-#My .gitignore
+
+# My .gitignore
 
 - Repositórios/
 
-Aula 22_11_2021 - PROVA BOSCH HTML/
+# My .gitignore
 
-#My .gitignore
 
 # User-specific files
 *.rsuser

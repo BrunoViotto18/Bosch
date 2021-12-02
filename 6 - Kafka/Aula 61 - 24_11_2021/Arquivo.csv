@@ -1,0 +1,33 @@
+time;temp;air-pressure;humidity;product;station
+1637781883.255885;35;1317;71.46;cri3;stat010
+1637781903.272959;30;1317;71.92;cri3;stat010
+1637781953.3441432;30;1339;70.87;cri3;stat010
+1637781873.2373867;33;1324;71.88;cri3;stat010
+1637781893.267502;33;1346;70.37;cri3;stat010
+1637781913.290551;29;1349;70.33;cri3;stat010
+1637781923.305013;35;1337;70.81;cri3;stat010
+1637781933.3211677;32;1316;70.63;cri3;stat010
+1637781943.3286574;29;1319;70.2;cri3;stat010
+1637781963.352171;30;1340;70.29;cri3;stat010
+time;temp;air-pressure;humidity;product;station
+{1637954943;31;1028;44.1;cri3;stat010;ntuser: Joao}
+{1637954943;31;1028;44.1;cri3;stat010;ntuser: Allan}
+{1637954943;31;1028;44.1;cri3;stat010;ntuser: Alexandre}
+{1637954943;31;1028;44.1;cri3;stat010;ntuser: marina}
+{1637954932;34;1013;48.0;cri3;stat010;ntuser: lir6ct}
+{1637954943;31;1028;44.1;cri3;stat010;ntuser: melissa}
+{1637954286;28;1023;44.4;cri3;stat010;ntuser: Carlos e Nicholas}
+{1637954943;31;1028;44.1;cri3;stat010;ntuser: murilo}
+{1637954317;29;1018;44.7;cri3;stat010;ntuser: Carlos e Nicholas}
+{1637954943;31;1028;44.1;cri3;stat010;ntuser: raissa}
+time;temp;air-pressure;humidity;product;station
+{1637954975;32;1033;43.8;cri3;stat010;ntuser: Gabriel :)}
+{1637955006;33;1028;43.5;cri3;stat010;ntuser: Gabriel :)}
+{1637955006;33;1028;43.5;cri3;stat010;ntuser: Alexandre}
+{1637955006;33;1028;43.5;cri3;stat010;ntuser: marina}
+{1637955001;33;1008;48.3;cri3;stat010;ntuser: lir6ct}
+{1637955006;33;1028;43.5;cri3;stat010;ntuser: melissa}
+{1637955006;33;1028;43.5;cri3;stat010;ntuser: murilo}
+{1637955006;33;1028;43.5;cri3;stat010;ntuser: raissa}
+{1637955006;33;1028;43.5;cri3;stat010;ntuser: thiago}
+{1637955006;33;1028;43.5;cri3;stat010;ntuser: steicy}

@@ -1,0 +1,31 @@
+body{
+    background-color: lightslategrey;
+}
+
+h1{
+    color: maroon;
+}
+
+p{
+    color: blue;
+    background-color: yellow;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#para1{
+    color: rgb(98, 93, 189);
+    text-align: center;
+    background-color: burlywood;
+}
+
+.center{
+    text-align: center;
+    color: crimson;
+    background-color: darkgrey;
+}
+
+p.large{
+    font-size: 300%;
+}

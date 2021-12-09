@@ -1,5 +1,4 @@
 /*
-
 create database ClienteVendedor;
 
 use ClienteVendedor;
@@ -114,6 +113,10 @@ insert into pedido(numero_pedido, prazo_entrega, cod_cliente, cod_vendedor) valu
 (127, 10, 410, 11)
 
 insert into item_pedido(numero_pedido, cod_produto, quantidade) values
+(121, 25, 10),
+(121, 31, 35),
+(97, 77, 20),
+(101, 31, 9),
 (101, 78, 18),
 (101, 13, 5),
 (98, 77, 5),
@@ -146,12 +149,117 @@ insert into item_pedido(numero_pedido, cod_produto, quantidade) values
 
 
 
+/* EX001 */
 select descricao, unidade, valor_unidade from produto
 
+/* EX002 */
 select cgc as cnpj, nome, endereco from cliente
 
+/* EX003 */
 select * from vendedor
 
+/* EX004 */
 select cod_vendedor as numero, nome_vendedor as nome, salario as rendimentos, faixa_comissao as comissao from vendedor
+
+/* EX005 */
+select nome_vendedor, salario*2 from vendedor
+
+/* EX006 */
+select numero_pedido, cod_produto, quantidade from item_pedido where quantidade = 35
+
+/* EX007 */
+select cod_cliente, nome, cidade from cliente where cidade = 'Niterói'
+
+/* EX008 */
+select descricao from produto where unidade = 'M' and valor_unidade = 1.05
+
+/* EX009 */
+select nome, endereco from cliente where cidade = 'São Paulo' or cep > 30077000 and cep < 30079000
+
+/* EX010 */
+select numero_pedido from pedido where prazo_entrega != 15
+
+/* EX011 */
+select cod_produto,  descricao from produto where valor_unidade between 0.32 and 2
+
+/* EX012 */
+select cod_produto, descricao from produto where descricao like 'Q%'
+
+/* EX013 */
+select nome_vendedor from vendedor where nome_vendedor not like 'Jo%'
+
+/* EX014 */
+select nome_vendedor from vendedor where faixa_comissao = 'A' or faixa_comissao = 'B' order by nome_vendedor
+
+/* EX015 */
+select * from cliente where ie is null
+
+/* EX016 */
+select nome_vendedor, salario from vendedor order by nome_vendedor
+
+/* EX017 */
+select nome, cidade, uf from cliente order by uf desc, cidade desc
+
+/* EX018 */
+select descricao, valor_unidade from produto where unidade = 'M' order by valor_unidade
+
+/* EX019 */
+select nome_vendedor, salario*1.75+120 from vendedor where faixa_comissao = 'C' order by nome_vendedor
+
+/* EX020 */
+select min(salario) as 'MIN(salario)', max(salario) as 'MAX(salario)' from vendedor
+
+/* EX021 */
+select sum(quantidade) as 'SUM(quantidade)' from item_pedido where cod_produto = 78
+
+/* EX022 */
+select avg(salario) as 'AVG(salario)' from vendedor
+
+/* EX023 */
+select count(salario) as 'COUNT(*)' from vendedor where salario > 2500
+
+/* EX024 */
+select unidade from produto group by unidade
+
+/* EX025 */
+select numero_pedido, count(numero_pedido) from item_pedido group by numero_pedido
+
+/* EX026 */
+select numero_pedido, count(numero_pedido) from item_pedido group by numero_pedido having count(numero_pedido) > 3/*
+
+/* EX027 */
+select cliente.nome, pedido.cod_cliente, pedido.numero_pedido from cliente
+inner join pedido on cliente.cod_cliente = pedido.cod_cliente order by cod_cliente
+
+/* EX028 */
+select cliente.nome, pedido.cod_cliente, pedido.numero_pedido from cliente, pedido
+
+/* EX029 */
+select cliente.nome, pedido.cod_cliente, numero_pedido from cliente
+left join pedido on cliente.cod_cliente = pedido.cod_cliente
+
+/* EX030 */
+select distinct cliente.nome, cliente.uf, pedido.prazo_entrega from cliente
+inner join pedido on cliente.cod_cliente = pedido.cod_cliente
+where prazo_entrega > 15 and (uf = 'SP' or uf = 'RJ')
+
+/* EX031 */
+select distinct cliente.nome, pedido.prazo_entrega from cliente 
+inner join pedido on cliente.cod_cliente = pedido.cod_cliente order by pedido.prazo_entrega desc
+
+/* EX032 */
+select distinct vendedor.nome_vendedor, vendedor.salario, pedido.prazo_entrega from vendedor
+inner join pedido on vendedor.cod_vendedor = pedido.cod_vendedor where prazo_entrega > 15 order by nome_vendedor
+
+/* EX033 */
+select distinct cliente.nome from cliente
+inner join pedido on cliente.cod_cliente = pedido.cod_cliente
+inner join item_pedido on pedido.numero_pedido = item_pedido.numero_pedido
+inner join produto on item_pedido.cod_produto = produto.cod_produto
+where pedido.prazo_entrega > 15 and cliente.cidade = 'Rio de Janeiro' and produto.descricao = 'Queijo'
+/* ERRO */
+
+/* EX034 */
+select 
 
 */

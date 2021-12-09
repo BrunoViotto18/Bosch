@@ -1,62 +1,58 @@
-
-/*cod_vendedor as numero, nome_vendedor as nome, salario_fixo as rendimentos, faxa_comissao as comissao*/
-
-/*select * from vendedor*/
-
-/*select cgc(cnpj), nome, endereco from cliente*/
-
-/*select descricao, unidade, valor_unidade from produto*/
-
-
-
-
-/*insert into pedido(numero_pedido, prazo_entrega, cod_cliente, cod_vendedor) values
-(121, , , ),
-(97, , , ),
-(101, , , ),
-(137, , , ),
-(148, , , ),
-(189, , , ),
-(, , , ),
-(, , , ),
-(, , , ),
-(, , , ),
-(, , , ),
-(, , , ),
-(, , , ),
-(, , , ),
-(, , , ),
-(, , , ),
-(, , , ),
-(, , , )*/
-/*Not finished*/
-
-/*insert into produto(cod_produto, unidade, descricao, valor_unidade) values
-(25, 'Kg', 'Queijo', 0.97),
-(31, 'BAR', 'Chocolate', 0.87),
-(78, 'L', 'Vinho', 2.00),
-(22, 'M', 'Linho', 0.11),
-(30, 'SAC', 'Açúcar', 0.30),
-(53, 'M', 'Linha', 1.80),
-(13, 'G', 'Ouro', 6.18),
-(45, 'M', 'Madeira', 0.25),
-(87, 'M', 'Cano', 1.97),
-(77, 'M', 'Papel', 1.05)*/
-/*Int Error*/
-
-/*insert into vendedor (cod_vendedor, nome, salario, faixa_comissao) values
-(209, 'José', 1800, 'C'),
-(111, 'Carlos', 2490, 'A'),
-(11, 'João', 2780, 'C'),
-(240, 'Antônio', 9500, 'C'),
-(720, 'Felipe', 4600, 'A'),
-(213, 'Jonas', 2300, 'A'),
-(101, 'João', 2650, 'C'),
-(310, 'Josias', 870, 'B'),
-(250, 'Maurício', 2930, 'B')*/
-/*Int Error*/
-
 /*
+create database ClienteVendedor;
+
+use ClienteVendedor;
+
+
+
+
+
+create table vendedor(
+	cod_vendedor integer not null primary key,
+	nome_vendedor varchar(50) not null,
+	salario numeric(10,2) not null,
+	faixa_comissao char not null
+);
+
+create table cliente(
+	cod_cliente integer not null primary key,
+	nome varchar(50) not null,
+	endereco varchar(100) not null,
+	cidade varchar(50) not null,
+	cep integer,
+	uf char(2) not null,
+	cgc varchar(20) not null,
+	ie integer
+);
+
+create table produto(
+	cod_produto integer not null primary key,
+	unidade varchar(5) not null,
+	descricao varchar(25) not null,
+	valor_unidade numeric(10,2) not null
+);
+
+create table pedido(
+	numero_pedido integer not null primary key,
+	prazo_entrega integer not null,
+	cod_cliente integer not null,
+	cod_vendedor integer not null,
+	foreign key (cod_cliente) references cliente,
+	foreign key (cod_vendedor) references vendedor
+);
+
+create table item_pedido(
+	numero_pedido integer not null,
+	cod_produto integer not null,
+	quantidade integer not null
+	foreign key (numero_pedido) references pedido,
+	foreign key (cod_produto) references produto
+);
+
+
+
+
+
 insert into cliente(cod_cliente, nome, endereco, cidade, cep, uf, cgc, ie) values
 (720, 'Ana', 'Rua 17 n.19', 'Niterói', 24358310, 'RJ', '12113231/0001-34', 2134),
 (870, 'Flávio', 'Av. Pres. Vargas 10', 'São Paulo', 22763931, 'SP', '22534126/9387-9', 4631),
@@ -73,49 +69,197 @@ insert into cliente(cod_cliente, nome, endereco, cidade, cep, uf, cgc, ie) value
 (390, 'Sebastião', 'Rua da Igreja n.10', 'Uberaba', 30438700, 'MG', '32176547/213-3', 9071),
 (234, 'José', 'Quadra 3 bl.3 sl.1003', 'Brasília', 22841650, 'DF', '21763576/1232-3', 2931)
 
-create table item_pedido(
-	numero_pedido int not null,
-	cod_produto int not null,
-	quantidade int not null
-	foreign key (numero_pedido) references pedido,
-	foreign key (cod_produto) references produto
-);
+insert into vendedor (cod_vendedor, nome_vendedor, salario, faixa_comissao) values
+(209, 'José', 1800, 'C'),
+(111, 'Carlos', 2490, 'A'),
+(11, 'João', 2780, 'C'),
+(240, 'Antônio', 9500, 'C'),
+(720, 'Felipe', 4600, 'A'),
+(213, 'Jonas', 2300, 'A'),
+(101, 'João', 2650, 'C'),
+(310, 'Josias', 870, 'B'),
+(250, 'Maurício', 2930, 'B')
 
-create table pedido(
-	numero_pedido int not null primary key,
-	prazo_entrega int not null,
-	cod_cliente int not null,
-	cod_vendedor int not null,
-	foreign key (cod_cliente) references cliente,
-	foreign key (cod_vendedor) references vendedor
-);
+insert into produto(cod_produto, unidade, descricao, valor_unidade) values
+(25, 'Kg', 'Queijo', 0.97),
+(31, 'BAR', 'Chocolate', 0.87),
+(78, 'L', 'Vinho', 2.00),
+(22, 'M', 'Linho', 0.11),
+(30, 'SAC', 'Açúcar', 0.30),
+(53, 'M', 'Linha', 1.80),
+(13, 'G', 'Ouro', 6.18),
+(45, 'M', 'Madeira', 0.25),
+(87, 'M', 'Cano', 1.97),
+(77, 'M', 'Papel', 1.05)
 
-create table produto(
-	cod_produto int not null primary key,
-	unidade varchar(5) not null,
-	descricao varchar(25) not null,
-	valor_unidade decimal(2,2) not null
-);
+insert into pedido(numero_pedido, prazo_entrega, cod_cliente, cod_vendedor) values
+(121, 20, 410, 209),
+(97, 20, 720, 101),
+(101, 15, 720, 101),
+(137, 20, 720, 720),
+(148, 20, 720, 101),
+(189, 15, 870, 213),
+(104, 30, 110, 101),
+(203, 30, 830, 250),
+(98, 20, 410, 209),
+(143, 30, 20, 111),
+(105, 15, 180, 240),
+(111, 20, 260, 240),
+(103, 20, 260, 11),
+(91, 20, 260, 11),
+(138, 20, 260, 11),
+(108, 15, 290, 310),
+(119, 30, 390, 250),
+(127, 10, 410, 11)
 
-create table cliente(
-	cod_cliente int not null primary key,
-	nome varchar(50) not null,
-	endereco varchar(100) not null,
-	cidade varchar(50) not null,
-	cep int,
-	uf char(2) not null,
-	cgc varchar(20) not null,
-	ie int
-);
+insert into item_pedido(numero_pedido, cod_produto, quantidade) values
+(121, 25, 10),
+(121, 31, 35),
+(97, 77, 20),
+(101, 31, 9),
+(101, 78, 18),
+(101, 13, 5),
+(98, 77, 5),
+(148, 45, 8),
+(148, 31, 7),
+(148, 77, 3),
+(148, 25, 10),
+(148, 78, 30),
+(104, 53, 32),
+(203, 31, 6),
+(189, 78, 45),
+(143, 31, 20),
+(143, 78, 10),
+(105, 78, 10),
+(111, 25, 10),
+(111, 78, 70),
+(103, 53, 37),
+(91, 77, 40),
+(138, 22, 10),
+(138, 77, 35),
+(138, 53, 18),
+(108, 13, 17),
+(119, 77, 40),
+(119, 13, 6),
+(119, 22, 10),
+(119, 53, 43),
+(137, 13, 8)
 
-create table vendedor(
-	cod_vendedor int not null primary key,
-	nome varchar(50) not null,
-	salario decimal(4,2) not null,
-	faixa_comissao char not null
-);
 
-use ClienteVendedor;
 
-create database ClienteVendedor;
+
+
+/* EX001 */
+select descricao, unidade, valor_unidade from produto
+
+/* EX002 */
+select cgc as cnpj, nome, endereco from cliente
+
+/* EX003 */
+select * from vendedor
+
+/* EX004 */
+select cod_vendedor as numero, nome_vendedor as nome, salario as rendimentos, faixa_comissao as comissao from vendedor
+
+/* EX005 */
+select nome_vendedor, salario*2 from vendedor
+
+/* EX006 */
+select numero_pedido, cod_produto, quantidade from item_pedido where quantidade = 35
+
+/* EX007 */
+select cod_cliente, nome, cidade from cliente where cidade = 'Niterói'
+
+/* EX008 */
+select descricao from produto where unidade = 'M' and valor_unidade = 1.05
+
+/* EX009 */
+select nome, endereco from cliente where cidade = 'São Paulo' or cep > 30077000 and cep < 30079000
+
+/* EX010 */
+select numero_pedido from pedido where prazo_entrega != 15
+
+/* EX011 */
+select cod_produto,  descricao from produto where valor_unidade between 0.32 and 2
+
+/* EX012 */
+select cod_produto, descricao from produto where descricao like 'Q%'
+
+/* EX013 */
+select nome_vendedor from vendedor where nome_vendedor not like 'Jo%'
+
+/* EX014 */
+select nome_vendedor from vendedor where faixa_comissao = 'A' or faixa_comissao = 'B' order by nome_vendedor
+
+/* EX015 */
+select * from cliente where ie is null
+
+/* EX016 */
+select nome_vendedor, salario from vendedor order by nome_vendedor
+
+/* EX017 */
+select nome, cidade, uf from cliente order by uf desc, cidade desc
+
+/* EX018 */
+select descricao, valor_unidade from produto where unidade = 'M' order by valor_unidade
+
+/* EX019 */
+select nome_vendedor, salario*1.75+120 from vendedor where faixa_comissao = 'C' order by nome_vendedor
+
+/* EX020 */
+select min(salario) as 'MIN(salario)', max(salario) as 'MAX(salario)' from vendedor
+
+/* EX021 */
+select sum(quantidade) as 'SUM(quantidade)' from item_pedido where cod_produto = 78
+
+/* EX022 */
+select avg(salario) as 'AVG(salario)' from vendedor
+
+/* EX023 */
+select count(salario) as 'COUNT(*)' from vendedor where salario > 2500
+
+/* EX024 */
+select unidade from produto group by unidade
+
+/* EX025 */
+select numero_pedido, count(numero_pedido) from item_pedido group by numero_pedido
+
+/* EX026 */
+select numero_pedido, count(numero_pedido) from item_pedido group by numero_pedido having count(numero_pedido) > 3/*
+
+/* EX027 */
+select cliente.nome, pedido.cod_cliente, pedido.numero_pedido from cliente
+inner join pedido on cliente.cod_cliente = pedido.cod_cliente order by cod_cliente
+
+/* EX028 */
+select cliente.nome, pedido.cod_cliente, pedido.numero_pedido from cliente, pedido
+
+/* EX029 */
+select cliente.nome, pedido.cod_cliente, numero_pedido from cliente
+left join pedido on cliente.cod_cliente = pedido.cod_cliente
+
+/* EX030 */
+select distinct cliente.nome, cliente.uf, pedido.prazo_entrega from cliente
+inner join pedido on cliente.cod_cliente = pedido.cod_cliente
+where prazo_entrega > 15 and (uf = 'SP' or uf = 'RJ')
+
+/* EX031 */
+select distinct cliente.nome, pedido.prazo_entrega from cliente 
+inner join pedido on cliente.cod_cliente = pedido.cod_cliente order by pedido.prazo_entrega desc
+
+/* EX032 */
+select distinct vendedor.nome_vendedor, vendedor.salario, pedido.prazo_entrega from vendedor
+inner join pedido on vendedor.cod_vendedor = pedido.cod_vendedor where prazo_entrega > 15 order by nome_vendedor
+
+/* EX033 */
+select distinct cliente.nome from cliente
+inner join pedido on cliente.cod_cliente = pedido.cod_cliente
+inner join item_pedido on pedido.numero_pedido = item_pedido.numero_pedido
+inner join produto on item_pedido.cod_produto = produto.cod_produto
+where pedido.prazo_entrega > 15 and cliente.cidade = 'Rio de Janeiro' and produto.descricao = 'Queijo'
+/* ERRO */
+
+/* EX034 */
+select 
+
 */

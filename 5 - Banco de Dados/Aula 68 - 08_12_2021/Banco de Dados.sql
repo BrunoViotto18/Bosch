@@ -168,7 +168,7 @@ select nome_vendedor, salario*2 from vendedor
 select numero_pedido, cod_produto, quantidade from item_pedido where quantidade = 35
 
 /* EX007 */
-select cod_cliente, nome, cidade from cliente where cidade = 'Niterói'
+select nome, cidade from cliente where cidade = 'Niterói'
 
 /* EX008 */
 select descricao from produto where unidade = 'M' and valor_unidade = 1.05
@@ -225,14 +225,14 @@ select unidade from produto group by unidade
 select numero_pedido, count(numero_pedido) from item_pedido group by numero_pedido
 
 /* EX026 */
-select numero_pedido, count(numero_pedido) from item_pedido group by numero_pedido having count(numero_pedido) > 3/*
+select numero_pedido, count(numero_pedido) as quantidade from item_pedido group by numero_pedido having count(numero_pedido) > 3
 
 /* EX027 */
 select cliente.nome, pedido.cod_cliente, pedido.numero_pedido from cliente
 inner join pedido on cliente.cod_cliente = pedido.cod_cliente order by cod_cliente
 
 /* EX028 */
-select cliente.nome, pedido.cod_cliente, pedido.numero_pedido from cliente, pedido
+select cliente.nome, pedido.cod_cliente, pedido.numero_pedido from cliente, pedido order by cod_cliente
 
 /* EX029 */
 select cliente.nome, pedido.cod_cliente, numero_pedido from cliente
@@ -252,14 +252,78 @@ select distinct vendedor.nome_vendedor, vendedor.salario, pedido.prazo_entrega f
 inner join pedido on vendedor.cod_vendedor = pedido.cod_vendedor where prazo_entrega > 15 order by nome_vendedor
 
 /* EX033 */
-select distinct cliente.nome from cliente
+select cliente.nome from cliente
 inner join pedido on cliente.cod_cliente = pedido.cod_cliente
 inner join item_pedido on pedido.numero_pedido = item_pedido.numero_pedido
 inner join produto on item_pedido.cod_produto = produto.cod_produto
-where pedido.prazo_entrega > 15 and cliente.cidade = 'Rio de Janeiro' and produto.descricao = 'Queijo'
-/* ERRO */
+where pedido.prazo_entrega > 15 and cliente.uf = 'RJ' and produto.descricao = 'Queijo' order by cliente.nome
 
 /* EX034 */
-select 
+select vendedor.nome_vendedor from vendedor
+inner join pedido on vendedor.cod_vendedor = pedido.cod_vendedor
+inner join item_pedido on pedido.numero_pedido = item_pedido.numero_pedido
+inner join produto on item_pedido.cod_produto = produto.cod_produto
+where produto.descricao = 'Chocolate' and item_pedido.quantidade > 10
+
+/* EX035 */
+select count(distinct cliente.nome) as ComprasComJoão from cliente
+inner join pedido on pedido.cod_cliente = cliente.cod_cliente
+inner join vendedor on pedido.cod_vendedor = vendedor.cod_vendedor
+where vendedor.nome_vendedor = 'João'
+
+/* EX036 */
+select count(distinct cliente.cod_cliente) as clientes, cliente.cidade from cliente
+inner join pedido on cliente.cod_cliente = pedido.cod_cliente
+inner join vendedor on pedido.cod_vendedor = vendedor.cod_vendedor
+where vendedor.nome_vendedor = 'João' and (cliente.cidade = 'Rio de Janeiro' or cliente.cidade = 'Niterói') group by cliente.cidade
+
+/* EX037 */
+select * from vendedor
+
+/* EX038 */
+select distinct descricao from produto
+inner join item_pedido on produto.cod_produto = item_pedido.cod_produto
+where item_pedido.quantidade in (10)
+
+/* EX039 */
+select distinct cod_vendedor, nome_vendedor from vendedor
+where salario < (select avg(salario) from vendedor)
+
+/* EX040 */
+select produto.descricao from produto
+left join item_pedido on produto.cod_produto = item_pedido.cod_produto
+where produto.cod_produto not in(select cod_produto from item_pedido)
+
+/* EX041 */
+select vendedor.cod_vendedor, vendedor.nome_vendedor from vendedor
+inner join pedido on vendedor.cod_vendedor = pedido.cod_vendedor
+inner join item_pedido on pedido.numero_pedido = item_pedido.numero_pedido
+inner join produto on item_pedido.cod_produto = produto.cod_produto
+where unidade = 'G'
+
+/* EX042 */
+select cliente.nome from cliente
+inner join pedido on cliente.cod_cliente = pedido.cod_cliente
+group by cliente.nome having count(cliente.nome) > 3
+
+/* EX043 */
+insert into produto(cod_produto, unidade, descricao, valor_unidade) values
+(108, 'Kg', 'Parafuso', 1.25)
+select * from produto
+
+/* EX044 */
+update produto set valor_unidade = 1.62 where cod_produto = 108
+
+/* EX045 */
+select nome_vendedor, salario from vendedor
+
+/* EX046 */
+update vendedor set salario = (salario * 1.27 + 100)
+select nome_vendedor, salario from vendedor
+
+/* EX047 */
+update produto set valor_unidade = (valor_unidade * 1.025)
+where valor_unidade < (select avg(valor_unidade) from produto where unidade = 'Kg')
+select * from produto
 
 */

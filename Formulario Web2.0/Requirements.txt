@@ -1,0 +1,4 @@
+cliente
+funcionario
+fornecedor
+produto

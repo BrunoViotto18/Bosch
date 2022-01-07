@@ -190,7 +190,7 @@ int underworld_tempo[] = {
 
 void setup(void)
 {
-  pinMode(A0, OUTPUT);//buzzer
+  pinMode(13, OUTPUT);//buzzer
   pinMode(13, OUTPUT);//led indicator when singing a note
 
 }

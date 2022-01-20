@@ -10,7 +10,7 @@
 #define CHARACTERISTIC_UUID_TX "0972128C-7613-4075-AD52-756F33D4DA95"
 
 // Número de contas no sistema
-#define CONTAS 3
+#define CONTAS 4
 
 
 // Inicializando biblioteca Bluetooth
@@ -23,10 +23,9 @@ int POTENC = 33;
 int BOTAO = 32;
 
 // Contas
-String website[CONTAS] = {"Gmail", "Github", "Youtube"};
-String email[CONTAS] = {"industriaquatro.0@gmail.com", "industriaquatro.0@gmail.com", "teste@gmail.com"};
-String senha[CONTAS] = {"senhaGmail", "senhaGithub", "senhaYoutube"};
-String VetorMain[CONTAS][3] = {website, email, senha};
+String website[CONTAS] = {"Gmail", "Github", "Youtube", "Twitter"};
+String email[CONTAS] = {"gmail@email.com", "github@email.com", "youtube@email.com", "twitter@email.com"};
+String senha[CONTAS] = {"senhaGmail", "senhaGithub", "senhaYoutube", "senhaTwitter"};
 int opcao = 0;
 
 // LED do ESP32
@@ -130,11 +129,21 @@ void loop() {
       break;
     }
   }
+  if (i >= CONTAS)
+  {
+    i = CONTAS - 1;
+  }
   
   if (digitalRead(BOTAO) == LOW)
   {
     if (deviceConnected)
     {
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("> Email");
+      lcd.setCursor(0,1);
+      lcd.print("  Senha");
+      
       char* txStringEmail = (char*)malloc(sizeof(char) * email[i].length()+1);
       for (int j = 0; j < email[i].length(); j++)
       {
@@ -152,20 +161,38 @@ void loop() {
       characteristicTX -> setValue(txStringEmail);
       characteristicTX ->notify();
       Serial.println(txStringEmail);
+
+      delay(1000);
       
       while(digitalRead(BOTAO) != LOW)
       {
-        delay(100);
+        
       }
+      
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("  Email");
+      lcd.setCursor(0,1);
+      lcd.print("> Senha");
       
       characteristicTX -> setValue(txStringSenha);
       characteristicTX ->notify();
-      Serial.println(txStringSenha);
+      Serial.print(txStringSenha);
 
       free(txStringEmail);
       free(txStringSenha);
+
+      delay(1000);
+      while (digitalRead(BOTAO) != LOW)
+      {
+        
+      }
+      delay(500);
+      
+      characteristicTX -> setValue("NULL");
+      characteristicTX ->notify();
+      Serial.print(txStringSenha);
     }
-    delay(1000);
   }
-  delay(10);
+  delay(100);
 }

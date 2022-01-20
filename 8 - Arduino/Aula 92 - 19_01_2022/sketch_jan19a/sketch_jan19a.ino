@@ -1,18 +1,21 @@
+#include <DHT.h>
+#include <DHT_U.h>
+
 #include <WiFi.h>
 #include <FirebaseESP32.h>
-#include <DHT.h>
+
 
 /*#define WIFI_SSID "Vivo-Internet-BF17"
 #define WIFI_PASSWORD "78814222"*/
 #define WIFI_SSID "Galaxy A318713"
 #define WIFI_PASSWORD "12345678"
-#define FIREBASE_HOST "https://dsmod3-default-rtdb.firebaseio.com/"
-#define FIREBASE_AUTH "4k6JNrElbIda17kE2eqdhFayrlY8yuMU9lcKKBBE"
+#define FIREBASE_HOST "https://teste-912f4-default-rtdb.firebaseio.com/"
+#define FIREBASE_AUTH "XGKx3t8qQTVginJRjUCqqjefsMCjcmKeuFS3St8B"
 
 FirebaseData firebaseData;
 FirebaseJson json;
 
-DHT dht(34, DHT11);
+DHT dht(33, DHT11);
 
 void setup() {
   Serial.begin(9600);
@@ -29,6 +32,7 @@ void setup() {
   Firebase.reconnectWiFi(true);
   Firebase.setReadTimeout(firebaseData, 1000 * 60);
   Firebase.setwriteSizeLimit(firebaseData, "tiny");
+  dht.begin();
 }
 
 void loop() {
@@ -36,6 +40,10 @@ void loop() {
   float h = dht.readHumidity();
   json.set("/temperatura", t);
   json.set("/umidade", h);
-  Firebase.updateNode(firebaseData, "Sensor/Bruno", json);
-  Serial.println("Loop");
+  Firebase.updateNode(firebaseData, "/Sensor", json);
+  Serial.print(t);
+  Serial.print("*C ");
+  Serial.print(h);
+  Serial.println("%");
+  delay(1000);
 }

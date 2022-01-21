@@ -2,6 +2,7 @@ import requests
 import json
 import pyodbc
 import time
+import seaborn
 
 
 proxies = {'https': 'https://disrct:saladigital0311@10.224.200.26:8080'}
@@ -16,8 +17,8 @@ def sinal():
     return temperatura, umidade
 
 def InserirBD(sinal):
-    server = 'CTPC3621'
-    database = 'Bruno_DB'
+    server = 'JVLPC0506'
+    database = 'SensorBruno'
     username = 'bruno'
     password = 'admin'
     cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
@@ -26,9 +27,9 @@ def InserirBD(sinal):
     cursor.commit()
     print("Inserido com sucesso!")
 
-'''while True:
+while True:
     InserirBD(sinal())
-    time.sleep(10)'''
+    time.sleep(1)
     
 def SelectBD():
     server = 'CTPC3621'

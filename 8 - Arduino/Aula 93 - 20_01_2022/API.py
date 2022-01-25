@@ -27,9 +27,9 @@ def InserirBD(sinal):
     cursor.commit()
     print("Inserido com sucesso!")
 
-while True:
+'''while True:
     InserirBD(sinal())
-    time.sleep(1)
+    time.sleep(1)'''
     
 def SelectBD():
     server = 'CTPC3621'

@@ -1,5 +1,5 @@
-#define TOPICO_PUBLISH   "Treinamento/ets/alexandre"   
-#define ID_MQTT  "cliente_alexandre" 
+#define TOPICO_PUBLISH   "Treinamento/ets/bruno"   
+#define ID_MQTT  "cliente_bruno" 
 
 const char* BROKER_MQTT = "broker.hivemq.com"; 
 int BROKER_PORT = 1883; 

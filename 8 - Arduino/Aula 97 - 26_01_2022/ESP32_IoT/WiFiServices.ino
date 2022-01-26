@@ -1,4 +1,4 @@
-const char* SSID = "Redmi Note 8";
+const char* SSID = "Galaxy A318713";
 const char* PASSWORD = "12345678"; 
 
 void initWiFi() 

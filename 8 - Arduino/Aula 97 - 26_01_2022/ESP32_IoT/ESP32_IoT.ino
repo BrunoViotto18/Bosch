@@ -6,7 +6,7 @@
 #define PIN_LED 2
 #define DHTPIN 33
 #define DHTTYPE DHT11
-#define ANALOG_PIN 15
+#define ANALOG_PIN A0
 #define ONBOARD_LED 16
 
 WiFiClient espClient; 
@@ -35,7 +35,10 @@ void loop() {
     if (MQTT.connected()){
       float h = getHumidity();
       float t = getTemperature();
-      float l = readLDRSensor();
+      int l = readLDRSensor();
+      
+      Serial.print("Luminosidade: ");
+      Serial.println(l);
 
       if(isnan(h) || isnan(t)){
         Serial.println(F("Failed to read from DHT Sensor!"));
@@ -49,7 +52,7 @@ void loop() {
       }
 
       char payload[255];
-      sprintf(payload,"{\"humid\":\"%.2f\",\"temp\":\"%.2f\"}",h, t);
+      sprintf(payload,"{\"humid\":\"%.2f\",\"temp\":\"%.2f\",\"ldr\":\"%d\"}",h, t, l);
       MQTTPublish(payload);
       
       MQTT.loop();    

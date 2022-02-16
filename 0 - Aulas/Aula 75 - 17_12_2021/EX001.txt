@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main(void) {
+    setlocale(LC_ALL , "");
+
+    double salario;
+    int tempo;
+
+    printf("Digite o salário do funcionário: ");
+    scanf("%lf", &salario);
+    printf("Digite o tempo de serviço do funcionário (anos): ");
+    scanf("%d", &tempo);
+
+    // Cálculo do reajuste do salário
+    double novo_salario = salario;
+    if (salario <= 500)
+    {
+        novo_salario *= 1.25;
+    }
+    else if (salario <= 1000)
+    {
+        novo_salario *= 1.2;
+    }
+    else if (salario <= 1500)
+    {
+        novo_salario *= 1.15;
+    }
+    else if (salario <= 2000)
+    {
+        novo_salario *= 1.1;
+    }
+
+    // Cálculo do bônus do salário
+    if (tempo > 10)
+    {
+        novo_salario += 500;
+    }
+    else if (tempo >= 7)
+    {
+        novo_salario += 300;
+    }
+    else if (tempo >= 4)
+    {
+        novo_salario += 200;
+    }
+    else if (tempo >= 1)
+    {
+        novo_salario += 100;
+    }
+
+    printf("\nSalário: R$%.2lf\n\n", salario);
+    if (salario == novo_salario)
+    {
+        printf("Não houve reajuste no salário!\n");
+    }
+    else
+    {
+        printf("Após reajuste ou bônus\n\n");
+        printf("Salário: R$%.2lf\n", novo_salario);
+    }
+
+    return 0;
+}

@@ -1,0 +1,188 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+#include <curses.h>
+
+
+// Structs
+typedef struct{
+    int cod;
+    char* nome;
+    double preco;
+} Produto;
+
+typedef struct{
+    Produto** produto;
+    int quantidade;
+} Catalogo;
+
+typedef struct{
+    Produto produto;
+    int quantidade;
+} Item;
+
+typedef struct{
+    Item* itens;
+    int quantidade;
+} Carrinho;
+
+
+// Protótipo de funções
+void menu();
+void cadastrar();
+void listar();
+void comprar();
+void visualizar_carrinho();
+void fechar_pedido();
+
+
+// Variáveis globais
+bool end = false;
+Catalogo catalogo;
+Carrinho carrinho;
+
+
+// Main
+int main()
+{
+    catalogo.quantidade = 0;
+    carrinho.quantidade = 0;
+    
+    while (!end)
+    {
+        menu();
+    }
+    
+    return 0;
+}
+
+// Menu do programa
+void menu()
+{
+    int num = 0;
+    while ((num <= 0 || num >= 7) && !end)
+    {
+        printf("======================\n");
+        printf("==== Bem-vindo(a) ====\n");
+        printf("====   Mercadão   ====\n");
+        printf("======================\n");
+        printf("Selecione uma opção abaixo:\n");
+        printf("[ 1 ] Cadastrar produto\n");
+        printf("[ 2 ] Listar produtos\n");
+        printf("[ 3 ] Comprar produto\n");
+        printf("[ 4 ] Visualizar carrinho\n");
+        printf("[ 5 ] Fechar pedido\n");
+        printf("[ 6 ] Sair do sistema\n");
+        scanf("%d", &num);
+        fflush(stdin);
+    }
+    switch(num)
+    {
+        case 1:
+            cadastrar();
+            break;
+        case 2:
+            listar();
+            break;
+        case 3:
+            comprar();
+            break;
+        case 4:
+            visualizar_carrinho();
+            break;
+        case 5:
+            fechar_pedido();
+            break;
+        case 6:
+            end = true;
+            break;
+    }
+}
+
+// Retorna o tamanho de um array de char
+int len(char* txt)
+{
+    int i = 0;
+    while (txt[i] != '\0'){
+        i += 1;
+    }
+    return i;
+}
+
+// Cadastra um novo produto e o adiciona ao catalogo
+void cadastrar()
+{
+    char nome[30];
+    double preco;
+
+    // Usuário insere nome e preço do produto
+    printf("Digite o nome do produto: ");
+    scanf("%s", nome);
+    fflush(stdin);
+    printf("Digite o preço do produto: ");
+    scanf("%lf", &preco);
+    fflush(stdin);
+
+    // Cadastra um produto
+    Produto* produto = (Produto*)malloc(sizeof(Produto));
+    produto->cod = catalogo.quantidade + 1;
+    produto->nome = (char*)malloc(sizeof(char) * (len(nome) + 1));
+    strcpy(produto->nome, nome);
+    produto->preco = preco;
+
+    // Insere o produto no catalogo
+    catalogo.produto = (Produto**)realloc(catalogo.produto, sizeof(Produto*) * (catalogo.quantidade + 1));
+    catalogo.produto[catalogo.quantidade] = produto;
+    catalogo.quantidade += 1;
+}
+
+void listar(){
+    printf("Catálogo de Produtos\n\n");
+    for (int i = 0; i < catalogo.quantidade; i++)
+    {
+        printf("%d - %s\tR$%.2lf\n", catalogo.produto[i]->cod, catalogo.produto[i]->nome, catalogo.produto[i]->preco);
+    }
+}
+
+// Efetua a compra de um produto
+void comprar(){
+    printf("Compra\n\n");
+    printf("Selecione um dos produtos abaixo: \n");
+    for (int i = 0; i < catalogo.quantidade; i++)
+    {
+        printf("[ %d ] %s\tR$%.2lf\n", catalogo.produto[i]->cod, catalogo.produto[i]->nome, catalogo.produto[i]->preco);
+    }
+    int num;
+    scanf("%d", &num);
+    
+    int cod = -1;
+    for (int i = 0; i < catalogo.quantidade; i++)
+    {
+        if (catalogo.produto[i]->cod == num)
+        {
+            cod = num;
+            break;
+        }
+    }
+    
+    if (cod == -1)
+    {
+        printf("\nProduto inválido!\n\n");
+        return;
+    }
+    
+    int quant;
+    printf("Digite a quantidade desejada: ");
+    scanf("%d", &quant);
+    
+    if 
+}
+
+void visualizar_carrinho(){
+    
+}
+
+void fechar_pedido(){
+    
+}

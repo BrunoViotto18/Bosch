@@ -58,7 +58,7 @@ namespace WorldSkills
             this.txbEmail.Location = new System.Drawing.Point(119, 36);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(138, 20);
-            this.txbEmail.TabIndex = 2;
+            this.txbEmail.TabIndex = 1;
             // 
             // Form1
             // 
@@ -72,6 +72,7 @@ namespace WorldSkills
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

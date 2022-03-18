@@ -7,10 +7,10 @@ using System.Windows.Forms;
 
 namespace WorldSkills
 {
-   
+
     class Program
     {
-        private static SqlConnection sqlcon = new SqlConnection(@"Data Source = JVLPC0524; Initial Catalog = ModuloDesktop; Integrated Security = True");
+        private static SqlConnection sqlcon = new SqlConnection(@"Data Source = JVLPC0510\SQLSERVER; Initial Catalog = WorldSkills_Nathan; Integrated Security = True");
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -19,7 +19,7 @@ namespace WorldSkills
         {
             //for win auth
             // @"Data Source=(MachineName)\(InstanceName);Initial Catalog=(DBname);Integrated Security=True;"
-
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Form1 form1 = new Form1(sqlcon);
@@ -32,14 +32,13 @@ namespace WorldSkills
 
             if (form1.Cadastrado)
             {
-                Application.Run(new Form2(form1.Index));
+                Application.Run(new Form2(form1.Index,sqlcon));
             }
             else
             {
                 Application.Run(new Form3(form1.Index, sqlcon));
             }
 
-            //Close Connection with the server
         }
     }
 }

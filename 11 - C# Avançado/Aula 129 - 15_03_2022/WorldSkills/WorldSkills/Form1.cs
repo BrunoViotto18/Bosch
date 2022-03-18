@@ -18,10 +18,10 @@ namespace WorldSkills
         public bool Cadastrado { get; private set; }
         private SqlConnection sqlcon;
 
-        public Form1(SqlConnection sqlcon)
+        public Form1(SqlConnection Sqlcon)
         {
             InitializeComponent();
-            this.sqlcon = sqlcon;
+            this.sqlcon = Sqlcon;
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace WorldSkills
             bool verify = false;
             foreach (DataRow row in dtbl.Rows)
             {
-                if (row["Email"].ToString() == email )
+                if (row["Email"].ToString() == email)
                 {
                     Index = row;
                     verify = true;
@@ -58,20 +58,23 @@ namespace WorldSkills
                         MessageBox.Show("Convite expirado.", "WsTowers - Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     */
-
                     this.Cadastrado = false;
-                    this.Close();
                 }
                 else
                 {
                     this.Cadastrado = true;
-                    this.Close();
                 }
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Email Inválido","WsTowers - Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Email Inválido", "WsTowers - Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

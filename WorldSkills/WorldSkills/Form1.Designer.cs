@@ -29,6 +29,7 @@ namespace WorldSkills
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.txbEmail = new System.Windows.Forms.TextBox();
@@ -37,15 +38,16 @@ namespace WorldSkills
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 38);
+            this.label1.Location = new System.Drawing.Point(29, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Digite seu email:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(274, 34);
+            this.btnOk.Location = new System.Drawing.Point(263, 34);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(52, 23);
             this.btnOk.TabIndex = 1;
@@ -69,9 +71,9 @@ namespace WorldSkills
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

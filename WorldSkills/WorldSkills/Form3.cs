@@ -11,15 +11,16 @@ using System.Windows.Forms;
 
 namespace WorldSkills
 {
-    public partial class Form7 : Form
+    public partial class Form3 : Form
     {
         private DataRow Usuario;
         private SqlConnection sqlcon;
         private DataTable dtbl;
         private AutoCompleteStringCollection ColorSource;
         private AutoCompleteStringCollection TeamSource;
+        public bool success = false;
 
-        public Form7(DataRow usuario, SqlConnection sqlcon)
+        public Form3(DataRow usuario, SqlConnection sqlcon)
         {
             InitializeComponent();
             this.Usuario = usuario;
@@ -80,7 +81,7 @@ namespace WorldSkills
 
             foreach (DataRow row in dtbl.Rows)
             {
-                if (row["apelido"].ToString() == txbApelido.Text && row["Apelido"].ToString() != Usuario["apelido"].ToString())
+                if (row["apelido"].ToString() == txbApelido.Text)
                 {
                     MessageBox.Show("Apelido já cadastrado.", "WsTowers - Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
@@ -99,9 +100,9 @@ namespace WorldSkills
             }
 
             SqlCommand cmd = new SqlCommand(
-                "UPDATE dbo.usuarios " +
-                "SET senha = (@senha), apelido = (@apelido), corfavorita = (@cor), timefavorito = (@time), nascimento = (@nascimento), foto = (@foto), datacadastro = (@datacadastro) " +
-                "WHERE idusuario = (@idusuario);", sqlcon);
+                $"UPDATE dbo.usuarios " +
+                $"SET senha = (@senha), apelido = (@apelido), corfavorita = (@cor), timefavorito = (@time), nascimento = (@nascimento), foto = (@foto), datacadastro = (@datacadastro) " +
+                $"WHERE idusuario = (@idusuario);", sqlcon);
 
             cmd.Parameters.AddWithValue("@senha", txbSenha.Text);
             cmd.Parameters.AddWithValue("@apelido", txbApelido.Text);
@@ -116,7 +117,13 @@ namespace WorldSkills
             cmd.ExecuteNonQuery();
             sqlcon.Close();
 
+            success = true;
             this.Close();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -21,6 +21,7 @@ namespace WorldSkills
         public int count_ = 10;
         private bool var = false; 
         private Timer MyTimer = new Timer();
+        public bool success = false;
         //public SqlConnection sqlcon = new SqlConnection(@"Data Source = JVLPC0510\SQLSERVER; Initial Catalog = WorldSkills_Nathan; Integrated Security = True");
 
         public Form2(DataRow usuario, SqlConnection Sqlcon)
@@ -38,7 +39,6 @@ namespace WorldSkills
             if (Properties.Settings.Default.userPass != string.Empty && txbEmail.Text == Properties.Settings.Default.userEmail)
             {
                 txbSenha.Text = Properties.Settings.Default.userPass;
-                button1_Click(null, EventArgs.Empty);
             }
 
         }
@@ -49,7 +49,7 @@ namespace WorldSkills
             {
                 if (Usuario["Senha"].ToString() == txbSenha.Text)
                 {
-                    
+                    MessageBox.Show("Senha correta!", "WsTowers - Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     if (checkRemember.Checked)
                     {
@@ -57,6 +57,7 @@ namespace WorldSkills
                         Properties.Settings.Default.userEmail = txbEmail.Text;
                         Properties.Settings.Default.Save();
                     }
+                    success = true;
                 }
                 else
                 {
@@ -74,7 +75,7 @@ namespace WorldSkills
                 }
             }
             
-           
+            
         }
         
 

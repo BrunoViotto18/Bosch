@@ -1,0 +1,86 @@
+CREATE TABLE Address(
+	address_id int PRIMARY KEY identity(1,1),
+	street varchar(100),
+	city varchar(30),
+	state varchar(30),
+	country varchar(30),
+	post_code varchar (10)
+);
+
+CREATE TABLE Person(
+	person_id int PRIMARY KEY identity(1,1),
+	address_id int FOREIGN KEY REFERENCES Address(address_id) not null,
+	name varchar(100),
+	age int,
+	document varchar(14),
+	email varchar(100),
+	phone varchar(15),
+	login varchar(100)
+);
+
+CREATE TABLE Client(
+	client_id int PRIMARY KEY identity(1,1),
+	person_id int FOREIGN KEY REFERENCES Person(person_id) not null
+);
+
+CREATE TABLE Owner(
+	Owner_id int PRIMARY KEY identity(1,1),
+	person_id int FOREIGN KEY REFERENCES Person(person_id) not null
+);
+
+CREATE TABLE Store(
+	store_id int PRIMARY KEY identity(1,1),
+	owner_id int FOREIGN KEY REFERENCES Owner(owner_id) not null,
+	name varchar(100),
+	CNPJ varchar(14)
+);
+
+CREATE TABLE Stocks(
+	stock_id int PRIMARY KEY identity(1,1),
+	store_id int FOREIGN KEY REFERENCES Store(store_id) not null,
+	quantity int
+);
+
+CREATE TABLE Purchase(
+	purchase_id int PRIMARY KEY identity(1,1),
+	store_id int FOREIGN KEY references Store(store_id) not null,
+	client_id int FOREIGN KEY references Client(client_id) not null,
+	date_purchase date,
+	payment varchar(100),
+	number_confirmation int,
+	number_nf varchar (150)
+);
+
+CREATE TABLE Product(
+	product_id int PRIMARY KEY identity(1,1),
+	stock_id int FOREIGN KEY REFERENCES Stocks(stock_id) not null,
+	name varchar(100),
+	unit_price decimal(9,3),
+	bar_code varchar(13)
+);
+
+CREATE TABLE Wishlist(
+	wishlist_id int PRIMARY KEY identity(1,1),
+	client_id int FOREIGN KEY REFERENCES client(client_id) not null,
+);
+
+CREATE TABLE WishlistProduct(
+	wishlist_product_id int PRIMARY KEY identity(1,1),
+	product_id int FOREIGN KEY REFERENCES Product(product_id) not null,
+	wishlist_id int FOREIGN KEY REFERENCES Wishlist(wishlist_id) not null,
+);
+
+CREATE TABLE ProductPurchased(
+	product_purchased_id int PRIMARY KEY identity(1,1),
+	product_id int FOREIGN KEY REFERENCES Product(product_id) not null,
+	purchase_id int FOREIGN KEY REFERENCES Purchase(purchase_id)not null,
+);
+
+
+
+insert into address(street,city,state,country,post_code)
+values ('P.O. Box 420, 2776 Purus. Rd.','Serangoon','Brussels Hoofdstedelijk Gewest','Turkey','3349'),
+  ('Ap #764-5404 At Av.','Southern Islands','Papua','Vietnam','3346'),
+  ('Ap #713-2347 Nam St.','Alkmaar','KwaZulu-Natal','South Africa','3151'),
+  ('207-6344 Luctus Rd.','Incheon','Rivne oblast','South Korea','585621'),
+  ('4536 Duis Rd.','Kirov','Cao Bằng','Indonesia','21259');

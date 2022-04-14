@@ -1,4 +1,12 @@
-*{
+:root{
+    --bottle-diameter: 200px;
+    --bottle-liquid-border: calc(var(--bottle-diameter) * 0.05);
+    --bottle-dislocation: 50px;
+}
+
+*,
+*::before,
+*::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,8 +16,122 @@ body{
     background-color: #181818;
     display: grid;
     place-items: center;
+    min-height: 100vh;
 }
 
+@keyframes bottle-animation{
+    0%,100%{
+        transform: translate(calc(-1 * var(--bottle-dislocation)));
+    }
+    50%{
+        transform: translate(calc(var(--bottle-dislocation)));
+    }
+}
+
+@keyframes liquid-animation{
+    0%,100%{
+        transform: rotate(10deg);
+    }
+    50%{
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes bottle-lid-animation{
+    0%,100%{
+        transform: rotate(-30deg);
+    }
+    50%{
+        transform: rotate(30deg);
+    }
+} 
+
 .bottle{
-    background-color: ;
+    background-color: rgba(255,255,255,0.05);
+    height: var(--bottle-diameter);
+    width: var(--bottle-diameter);
+    border-radius: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: flex-end;
+    padding: var(--bottle-liquid-border);
+    position: relative;
+    animation: bottle-animation 5s ease-in-out infinite;
+}
+
+.bottle-lid-container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    position: absolute;
+    animation: bottle-lid-animation 5s ease-in-out infinite;
+}
+
+.bottle-lid{
+    content: "";
+    background-color: #222;
+    height: calc(var(--bottle-diameter) * 0.4 / 2.5);
+    width: calc(var(--bottle-diameter) * 0.45);
+    display: block;
+    position: absolute;
+    justify-self: center;
+    border-radius: 50%;
+    border: calc(var(--bottle-diameter) / 2 * 1/12) solid #444;
+    top: calc(-1/4 * var(--bottle-diameter) * 0.4 / 2.5);
+    box-shadow: 0 7px rgba(0, 0, 0, 0.15);
+}
+
+.bottle::after{
+    content: "";
+    background-color: rgba(255,255,255,0.05);
+    display: block;
+    height: calc(var(--bottle-diameter) * 0.25);
+    width: calc(var(--bottle-diameter) * 0.5);
+    position: absolute;
+    justify-self: center;
+    top: 30%;
+    border-radius: 50%;
+}
+
+.bottle-shadow{
+    background-color: rgba(0,0,0,0.5);
+}
+
+.liquid-container{
+    height: calc(var(--bottle-diameter) - 2 * var(--bottle-liquid-border));
+    width: calc(var(--bottle-diameter) - 2 * var(--bottle-liquid-border));
+    display: grid;
+    align-content: flex-end;
+    animation: liquid-animation 5s ease-in-out infinite;
+}
+
+.liquid{
+    background-color: cornflowerblue;
+    height: calc(var(--bottle-diameter) / 2 - var(--bottle-liquid-border));
+    width: calc(var(--bottle-diameter) - 2 * var(--bottle-liquid-border));
+    border-radius: 0 0 calc(var(--bottle-diameter) / 2 - var(--bottle-liquid-border)) calc(var(--bottle-diameter) / 2 - var(--bottle-liquid-border));
+    position: relative;
+    filter: drop-shadow(0 0 25px cornflowerblue) drop-shadow(0 0 60px cornflowerblue);
+}
+
+.liquid::before{
+    content: "";
+    background-color: rgb(182, 127, 255);
+    width: calc(var(--bottle-diameter) - 2 * var(--bottle-liquid-border));
+    height: calc((var(--bottle-diameter) - 2 * var(--bottle-liquid-border)) * 0.2);
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(-1/2 * (var(--bottle-diameter) - 2 * var(--bottle-liquid-border)) * 0.2);
+    filter: drop-shadow(0 0 25px rgb(182, 127, 255)) drop-shadow(0 0 60px rgb(182, 127, 255));
+}
+
+.bottle-shadow{
+    background-color: #18181815;
+    height: calc(var(--bottle-diameter) * 0.4 / 2.5);
+    width: calc(var(--bottle-diameter) * 0.8);
+    justify-self: center;
+    position: absolute;
+    bottom: calc(var(--bottle-diameter) * -0.4 / 2.5);
+    border-radius: 50%;
 }

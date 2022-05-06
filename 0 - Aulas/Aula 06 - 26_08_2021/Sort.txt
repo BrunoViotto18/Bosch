@@ -1,4 +1,0 @@
-lista = [[5, 6, 8, 7 , 1, 2], ['Banana', 'Melância', 'Abacate', 'Laranja', 'Jabuticaba']]
-lista[0].sort()
-lista[1].sort()
-print(lista)

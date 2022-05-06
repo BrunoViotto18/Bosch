@@ -1,7 +1,0 @@
-S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\C-SHARP\C-SHARP\bin\Debug\C-SHARP.exe.config
-S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\C-SHARP\C-SHARP\bin\Debug\C-SHARP.exe
-S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\C-SHARP\C-SHARP\bin\Debug\C-SHARP.pdb
-S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\C-SHARP\C-SHARP\obj\Debug\C-SHARP.csproj.AssemblyReference.cache
-S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\C-SHARP\C-SHARP\obj\Debug\C-SHARP.csproj.CoreCompileInputs.cache
-S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\C-SHARP\C-SHARP\obj\Debug\C-SHARP.exe
-S:\COM\Human_Resources\01.Engineering_Tech_School\02.Internal\10 - Aprendizes\5 - Desenvolvimento de Sistemas\Bruno Viotto Dos Santos\C-SHARP\C-SHARP\obj\Debug\C-SHARP.pdb

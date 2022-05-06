@@ -1,0 +1,7 @@
+- Qr code tipo ingresso
+- Validador CPF
+- Utilização de dados mais eficientes
+- Remodelar o Front
+- Dashboard
+- Testes automatizados
+- Mais atributos para o produto
